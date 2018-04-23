@@ -1,5 +1,5 @@
 PODS:
-  - MLMenu (0.1.6)
+  - MLMenu (0.1.7)
 
 DEPENDENCIES:
   - MLMenu (from `../MLMenu.podspec`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../MLMenu.podspec"
 
 SPEC CHECKSUMS:
-  MLMenu: 5091b98fa8791763f4a0d0c6ac81631c529bf302
+  MLMenu: 19cd609d77d27f7ba5a5cf19461e7605f92b1b78
 
 PODFILE CHECKSUM: 620d4cafb875c12d09ab0f7d1ab77ec7a4325d4b
 
