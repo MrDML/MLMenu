@@ -1,5 +1,5 @@
 use_frameworks!
 
 target 'MLMenu_Example' do
-  pod 'MLMenu', '~> 0.1.0'
+  pod 'MLMenu', '~> 0.1.1'
 end

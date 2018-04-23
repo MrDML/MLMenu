@@ -368,7 +368,7 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
 
 - (void)dealloc
 {
-    
+    NSLog(@"已经销毁");
 }
 
 
