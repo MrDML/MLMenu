@@ -8,6 +8,17 @@
 
 @import UIKit;
 
-@interface MLViewController : UIViewController
+typedef NS_ENUM(NSInteger, MLMenuStyle) {
+    MLMenuStyle_Title,
+    MLMenuStyle_ImageAndTitle,
+    MLMenuStyle_AnimationRight,
+    MLMenuStyle_AnimationTop,
+    MLMenuStyle_AnimationNone,
+    MLMenuStyle_HasTriangle,
+    MLMenuStyle_NoHasTriangle
+    
+};
 
+@interface MLViewController : UIViewController
+@property (nonatomic, assign) MLMenuStyle menuStyle;
 @end

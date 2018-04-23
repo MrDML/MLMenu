@@ -1,6 +1,6 @@
 {
   "name": "MLMenu",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "summary": "A Simple MLMenu.",
   "description": "WeChat QQ top right menu option function.",
   "homepage": "https://github.com/MrDML/MLMenu",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/MrDML/MLMenu.git",
-    "tag": "0.1.4"
+    "tag": "0.1.6"
   },
   "platforms": {
     "ios": "8.0"

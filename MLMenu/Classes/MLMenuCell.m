@@ -86,6 +86,7 @@
     }
     self.viewLine.backgroundColor = menuItem.separatorColor ?  menuItem.separatorColor :MLClolor(92, 92, 92, 1);
   
+    self.labelTitle.textAlignment = self.imageViewAccessory.hidden ? NSTextAlignmentCenter : NSTextAlignmentLeft;
     
 }
 
