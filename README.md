@@ -11,7 +11,6 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Preview
 ![Demo](https://github.com/MrDML/MLMenu/blob/master/MLMenu.gif)
-[MLMenu.gif](quiver-image-url/C2133BC13CE83BF2286EA4FD04F6A5A4.gif =339x587)
 
 ## Requirements!
 iOS 8.0
