@@ -1,0 +1,6 @@
+framework module MLMenu {
+  umbrella header "MLMenu-umbrella.h"
+
+  export *
+  module * { export * }
+}

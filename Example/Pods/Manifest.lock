@@ -1,0 +1,16 @@
+PODS:
+  - MLMenu (0.1.0)
+
+DEPENDENCIES:
+  - MLMenu (from `../`)
+
+EXTERNAL SOURCES:
+  MLMenu:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MLMenu: 50da3f1759151dfd62315da736562a00aac19137
+
+PODFILE CHECKSUM: fbd9dfb098e1828220fee8d8a17d1b90fb418640
+
+COCOAPODS: 1.5.0
