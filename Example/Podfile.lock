@@ -1,16 +1,16 @@
 PODS:
-  - MLMenu (0.1.1)
+  - MLMenu (0.1.2)
 
 DEPENDENCIES:
-  - MLMenu (~> 0.1.1)
+  - MLMenu (~> 0.1.2)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - MLMenu
 
 SPEC CHECKSUMS:
-  MLMenu: 5aaba3b6fd981aeb5149ee0f40db6b8207c94276
+  MLMenu: fe8764e69b93a14989b0cce49b74d3652385b087
 
-PODFILE CHECKSUM: ea223269c50a3799fae148b8f9d369d92c326447
+PODFILE CHECKSUM: 61586e47fcd701738bdd31471121434f9ae89384
 
 COCOAPODS: 1.5.0
