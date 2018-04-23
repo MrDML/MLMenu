@@ -10,6 +10,10 @@
 #endif
 #endif
 
+#import "MLMenu.h"
+#import "MLMenuCell.h"
+#import "MLMenuItem.h"
+#import "MLMenuView.h"
 
 FOUNDATION_EXPORT double MLMenuVersionNumber;
 FOUNDATION_EXPORT const unsigned char MLMenuVersionString[];

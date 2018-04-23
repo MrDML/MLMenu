@@ -2,15 +2,15 @@ PODS:
   - MLMenu (0.1.0)
 
 DEPENDENCIES:
-  - MLMenu (from `../`)
+  - MLMenu (~> 0.1.0)
 
-EXTERNAL SOURCES:
-  MLMenu:
-    :path: "../"
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - MLMenu
 
 SPEC CHECKSUMS:
-  MLMenu: 50da3f1759151dfd62315da736562a00aac19137
+  MLMenu: a5d9a8e140d3982cad60050285dda4891d387beb
 
-PODFILE CHECKSUM: fbd9dfb098e1828220fee8d8a17d1b90fb418640
+PODFILE CHECKSUM: a72e6c78e01a52cb14f2e87ca2279e83a17f273d
 
 COCOAPODS: 1.5.0

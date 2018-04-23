@@ -1,11 +1,5 @@
 use_frameworks!
 
 target 'MLMenu_Example' do
-  pod 'MLMenu', :path => '../'
-
-  target 'MLMenu_Tests' do
-    inherit! :search_paths
-
-    
-  end
+  pod 'MLMenu', '~> 0.1.0'
 end
