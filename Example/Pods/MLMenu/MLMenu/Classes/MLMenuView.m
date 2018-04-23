@@ -365,10 +365,6 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
     [self.contentView.layer addSublayer:layer];
 }
 
-
-
-
-
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
