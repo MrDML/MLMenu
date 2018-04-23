@@ -1,5 +1,9 @@
+
 use_frameworks!
 
 target 'MLMenu_Example' do
-  pod 'MLMenu', '~> 0.1.4'
+    pod 'MLMenu', :path => '../MLMenu.podspec'
+
 end
+
+

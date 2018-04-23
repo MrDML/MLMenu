@@ -105,9 +105,5 @@ typedef void(^MLDidSelectBlock)(NSInteger index);
  */
 - (void)showMenuEnterAnimation:(MLEnterAnimationStyle)animationStyle;
 
-/**
- 隐藏菜单
- */
-- (void)hidMenuExitAnimation:(MLEnterAnimationStyle)animationStyle;
 
 @end

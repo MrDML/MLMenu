@@ -1,8 +1,8 @@
 {
   "name": "MLMenu",
-  "version": "0.1.0",
-  "summary": "A short description of MLMenu.",
-  "description": "TODO: Add long description of the pod here.",
+  "version": "0.1.4",
+  "summary": "A Simple MLMenu.",
+  "description": "WeChat QQ top right menu option function.",
   "homepage": "https://github.com/MrDML/MLMenu",
   "license": {
     "type": "MIT",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/MrDML/MLMenu.git",
-    "tag": "0.1.0"
+    "tag": "0.1.4"
   },
   "platforms": {
     "ios": "8.0"

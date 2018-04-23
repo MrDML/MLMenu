@@ -365,6 +365,13 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
     [self.contentView.layer addSublayer:layer];
 }
 
+
+- (void)dealloc
+{
+    NSLog(@"已经销毁");
+}
+
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

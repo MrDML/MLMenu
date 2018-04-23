@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04A22D6227FAA3D51DA45C5BE653149B /* MLMenuCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 06A3C73539DD0DBB897D52FE6D68E692 /* MLMenuCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		055DF8EF9E420B792DBEEA8C06A35054 /* MLMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 600169EC0A8D9E21EB6EF5B001906058 /* MLMenu-dummy.m */; };
-		24E4FF8E6A9F65AB518C0662ED18422E /* MLMenuItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 25AD2F069CF501B1647958B38418CCF0 /* MLMenuItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		04A22D6227FAA3D51DA45C5BE653149B /* MLMenuCell.h in Headers */ = {isa = PBXBuildFile; fileRef = C7B02488FBDCC37ABCB975212E9DF667 /* MLMenuCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		055DF8EF9E420B792DBEEA8C06A35054 /* MLMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8C63AFC87E35108DC405101B4E1414 /* MLMenu-dummy.m */; };
+		24E4FF8E6A9F65AB518C0662ED18422E /* MLMenuItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CDAD201473EA1CCC80134EBB14473FD /* MLMenuItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A97D4AADA68A4EEC46F9FFCE9909648 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		314B68A337B09DC904F4EEBC30AC7665 /* MLMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AAD0DCFB6937B682607ED594E7B86755 /* MLMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		314B68A337B09DC904F4EEBC30AC7665 /* MLMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C3DB83F64D453691F15A2F83DAFC3BAA /* MLMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3E4C079F861A26D3DB9EA4F9B9E131D1 /* Pods-MLMenu_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF34BD81E56285ED315B32525D63383 /* Pods-MLMenu_Example-dummy.m */; };
-		443B286A782359364C2600883A7DB2EB /* MLMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F188271FAA6C3E1D83C97B376DFAD4DC /* MLMenuCell.m */; };
+		443B286A782359364C2600883A7DB2EB /* MLMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D37FF779472F04BE697183E0CB13ED0A /* MLMenuCell.m */; };
 		5AFC502DD4A673CA3070D742DC9CF74E /* Pods-MLMenu_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C61259CC8E2A3ACA9909DEC90D89C00F /* Pods-MLMenu_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6E43FB7AE698DDAB36D4A4195E715928 /* MLMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DAF7A57349D9404088B92BA4D841F /* MLMenuItem.m */; };
+		6E43FB7AE698DDAB36D4A4195E715928 /* MLMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6D5500F618F0AD48C36D05D8FED9AA /* MLMenuItem.m */; };
 		9C3718DB0CD48E87F93FF644917CD5F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		A9C68709A1756D2283B6A25669DF545A /* MLMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD26AC30CC5916B3D5799017BF292E7 /* MLMenuView.m */; };
-		CF9BB8631B18BBEBB2449DB80E615EEF /* MLMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 0CEB2AF3A94A7CAE76D5195101861A40 /* MLMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D050D648C89B6B27369EEDE923AA6FCA /* MLMenuView.h in Headers */ = {isa = PBXBuildFile; fileRef = D4C6CC7764BAF278181C3FBED5444FB4 /* MLMenuView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A9C68709A1756D2283B6A25669DF545A /* MLMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F253D7F8060ECF8F7B47C837AFF8367 /* MLMenuView.m */; };
+		CF9BB8631B18BBEBB2449DB80E615EEF /* MLMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 531092625604E73B08554ED6FA121597 /* MLMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D050D648C89B6B27369EEDE923AA6FCA /* MLMenuView.h in Headers */ = {isa = PBXBuildFile; fileRef = 429E869A79746B58C9AA7E66823EB1EF /* MLMenuView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,32 +33,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		035C9C7426AB2B194A8ABBF22093089D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		03FD5152BAD95AB9B1CB48991C76D482 /* Pods-MLMenu_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MLMenu_Example.release.xcconfig"; sourceTree = "<group>"; };
-		06A3C73539DD0DBB897D52FE6D68E692 /* MLMenuCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLMenuCell.h; path = MLMenu/Classes/MLMenuCell.h; sourceTree = "<group>"; };
-		0CEB2AF3A94A7CAE76D5195101861A40 /* MLMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLMenu.h; path = MLMenu/Classes/MLMenu.h; sourceTree = "<group>"; };
 		0D086AA3607392E3CF4A55CE609472CB /* Pods-MLMenu_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MLMenu_Example-frameworks.sh"; sourceTree = "<group>"; };
 		170FBEABED97222EBABC339A1E2F019E /* Pods_MLMenu_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MLMenu_Example.framework; path = "Pods-MLMenu_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		25AD2F069CF501B1647958B38418CCF0 /* MLMenuItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLMenuItem.h; path = MLMenu/Classes/MLMenuItem.h; sourceTree = "<group>"; };
+		2CDAD201473EA1CCC80134EBB14473FD /* MLMenuItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLMenuItem.h; path = MLMenu/Classes/MLMenuItem.h; sourceTree = "<group>"; };
 		3A5E13E56B0B7F2564E2C204ADCEC8E2 /* Pods-MLMenu_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MLMenu_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		4AD26AC30CC5916B3D5799017BF292E7 /* MLMenuView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLMenuView.m; path = MLMenu/Classes/MLMenuView.m; sourceTree = "<group>"; };
-		600169EC0A8D9E21EB6EF5B001906058 /* MLMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MLMenu-dummy.m"; sourceTree = "<group>"; };
-		65550E2A3EEBAF93BF1312018E45DB5B /* MLMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MLMenu-prefix.pch"; sourceTree = "<group>"; };
+		3E56A5215296A07C9B1F020231BD454E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		40BFB2CCFB5ED0B2ABC7580E874269BB /* MLMenu.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = MLMenu.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		429E869A79746B58C9AA7E66823EB1EF /* MLMenuView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLMenuView.h; path = MLMenu/Classes/MLMenuView.h; sourceTree = "<group>"; };
+		44A216DB165B40790306CA3A1CD716D3 /* MLMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MLMenu.xcconfig; sourceTree = "<group>"; };
+		4BBBDF24A54796F65DEBD4145E4A4A09 /* MLMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MLMenu.modulemap; sourceTree = "<group>"; };
+		531092625604E73B08554ED6FA121597 /* MLMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLMenu.h; path = MLMenu/Classes/MLMenu.h; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6981963827A152E4BACD3A0873EF02AA /* MLMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MLMenu.xcconfig; sourceTree = "<group>"; };
 		7311DB7E3E5A4E78A35F385EEC08D89A /* Pods-MLMenu_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MLMenu_Example-resources.sh"; sourceTree = "<group>"; };
-		79C219DD55B6315ABA62AF297121536F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E6D5500F618F0AD48C36D05D8FED9AA /* MLMenuItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLMenuItem.m; path = MLMenu/Classes/MLMenuItem.m; sourceTree = "<group>"; };
+		7F253D7F8060ECF8F7B47C837AFF8367 /* MLMenuView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLMenuView.m; path = MLMenu/Classes/MLMenuView.m; sourceTree = "<group>"; };
 		8B9F21A0144A3454045C777EB7F05316 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8E8DAF7A57349D9404088B92BA4D841F /* MLMenuItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLMenuItem.m; path = MLMenu/Classes/MLMenuItem.m; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9C6D995FE57E7B20D214AD6F4A36B54F /* MLMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MLMenu.modulemap; sourceTree = "<group>"; };
-		AAD0DCFB6937B682607ED594E7B86755 /* MLMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MLMenu-umbrella.h"; sourceTree = "<group>"; };
 		AD1DC168B9F18698F4B8ADBA304297CD /* Pods-MLMenu_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MLMenu_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		BA6D6898F0EE8DF1367FD20CA93E03CB /* MLMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MLMenu.framework; path = MLMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3DB83F64D453691F15A2F83DAFC3BAA /* MLMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MLMenu-umbrella.h"; sourceTree = "<group>"; };
 		C3DBDDEC3CB2983541E1459707B24F04 /* Pods-MLMenu_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MLMenu_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C61259CC8E2A3ACA9909DEC90D89C00F /* Pods-MLMenu_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MLMenu_Example-umbrella.h"; sourceTree = "<group>"; };
-		D4C6CC7764BAF278181C3FBED5444FB4 /* MLMenuView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLMenuView.h; path = MLMenu/Classes/MLMenuView.h; sourceTree = "<group>"; };
+		C7B02488FBDCC37ABCB975212E9DF667 /* MLMenuCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLMenuCell.h; path = MLMenu/Classes/MLMenuCell.h; sourceTree = "<group>"; };
+		CD8C63AFC87E35108DC405101B4E1414 /* MLMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MLMenu-dummy.m"; sourceTree = "<group>"; };
+		D266A14EC7696829731FEAF123A333BF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D37FF779472F04BE697183E0CB13ED0A /* MLMenuCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLMenuCell.m; path = MLMenu/Classes/MLMenuCell.m; sourceTree = "<group>"; };
 		DB583B22EE3DA033E6E2E815A2874A05 /* Pods-MLMenu_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MLMenu_Example.modulemap"; sourceTree = "<group>"; };
-		F188271FAA6C3E1D83C97B376DFAD4DC /* MLMenuCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLMenuCell.m; path = MLMenu/Classes/MLMenuCell.m; sourceTree = "<group>"; };
+		DCCCA12889286DFDFA73221A638FA198 /* MLMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MLMenu-prefix.pch"; sourceTree = "<group>"; };
 		FDF34BD81E56285ED315B32525D63383 /* Pods-MLMenu_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MLMenu_Example-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,18 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		13F9AD89755DFEBF0C9D97CEF2D43A07 /* Support Files */ = {
+		4CC2B7386BEDA8F05DCAF66DB34F38AC /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				79C219DD55B6315ABA62AF297121536F /* Info.plist */,
-				9C6D995FE57E7B20D214AD6F4A36B54F /* MLMenu.modulemap */,
-				6981963827A152E4BACD3A0873EF02AA /* MLMenu.xcconfig */,
-				600169EC0A8D9E21EB6EF5B001906058 /* MLMenu-dummy.m */,
-				65550E2A3EEBAF93BF1312018E45DB5B /* MLMenu-prefix.pch */,
-				AAD0DCFB6937B682607ED594E7B86755 /* MLMenu-umbrella.h */,
+				3E56A5215296A07C9B1F020231BD454E /* LICENSE */,
+				40BFB2CCFB5ED0B2ABC7580E874269BB /* MLMenu.podspec */,
+				035C9C7426AB2B194A8ABBF22093089D /* README.md */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/MLMenu";
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		5DD3B8EB7369390E2A80208A19881143 /* Targets Support Files */ = {
@@ -108,19 +107,11 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				A616754C8C2576B4D7512C553B6961BF /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				9313091467F3525E2D625B0CF71935C1 /* Pods */,
 				F519731938F5E623B062A6A8A71DCC08 /* Products */,
 				5DD3B8EB7369390E2A80208A19881143 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		9313091467F3525E2D625B0CF71935C1 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				BFD0DD2F0CF6A65B969A7A647469DA32 /* MLMenu */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		A529BF9D0D80D01287DEA7308E6CDFE1 /* Pods-MLMenu_Example */ = {
@@ -141,6 +132,14 @@
 			path = "Target Support Files/Pods-MLMenu_Example";
 			sourceTree = "<group>";
 		};
+		A616754C8C2576B4D7512C553B6961BF /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E9178BCDCA4B579998466714D3FC76A6 /* MLMenu */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,28 +148,43 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BFD0DD2F0CF6A65B969A7A647469DA32 /* MLMenu */ = {
-			isa = PBXGroup;
-			children = (
-				0CEB2AF3A94A7CAE76D5195101861A40 /* MLMenu.h */,
-				06A3C73539DD0DBB897D52FE6D68E692 /* MLMenuCell.h */,
-				F188271FAA6C3E1D83C97B376DFAD4DC /* MLMenuCell.m */,
-				25AD2F069CF501B1647958B38418CCF0 /* MLMenuItem.h */,
-				8E8DAF7A57349D9404088B92BA4D841F /* MLMenuItem.m */,
-				D4C6CC7764BAF278181C3FBED5444FB4 /* MLMenuView.h */,
-				4AD26AC30CC5916B3D5799017BF292E7 /* MLMenuView.m */,
-				13F9AD89755DFEBF0C9D97CEF2D43A07 /* Support Files */,
-			);
-			name = MLMenu;
-			path = MLMenu;
-			sourceTree = "<group>";
-		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		D5157806BA333FD54072F765D555536E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D266A14EC7696829731FEAF123A333BF /* Info.plist */,
+				4BBBDF24A54796F65DEBD4145E4A4A09 /* MLMenu.modulemap */,
+				44A216DB165B40790306CA3A1CD716D3 /* MLMenu.xcconfig */,
+				CD8C63AFC87E35108DC405101B4E1414 /* MLMenu-dummy.m */,
+				DCCCA12889286DFDFA73221A638FA198 /* MLMenu-prefix.pch */,
+				C3DB83F64D453691F15A2F83DAFC3BAA /* MLMenu-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/MLMenu";
+			sourceTree = "<group>";
+		};
+		E9178BCDCA4B579998466714D3FC76A6 /* MLMenu */ = {
+			isa = PBXGroup;
+			children = (
+				531092625604E73B08554ED6FA121597 /* MLMenu.h */,
+				C7B02488FBDCC37ABCB975212E9DF667 /* MLMenuCell.h */,
+				D37FF779472F04BE697183E0CB13ED0A /* MLMenuCell.m */,
+				2CDAD201473EA1CCC80134EBB14473FD /* MLMenuItem.h */,
+				7E6D5500F618F0AD48C36D05D8FED9AA /* MLMenuItem.m */,
+				429E869A79746B58C9AA7E66823EB1EF /* MLMenuView.h */,
+				7F253D7F8060ECF8F7B47C837AFF8367 /* MLMenuView.m */,
+				4CC2B7386BEDA8F05DCAF66DB34F38AC /* Pod */,
+				D5157806BA333FD54072F765D555536E /* Support Files */,
+			);
+			name = MLMenu;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		F519731938F5E623B062A6A8A71DCC08 /* Products */ = {
@@ -304,7 +318,7 @@
 /* Begin XCBuildConfiguration section */
 		295E4DC5F729B885FE4C856A7ADAB812 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6981963827A152E4BACD3A0873EF02AA /* MLMenu.xcconfig */;
+			baseConfigurationReference = 44A216DB165B40790306CA3A1CD716D3 /* MLMenu.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -335,7 +349,7 @@
 		};
 		7E4941E97EAB89B84FC51714E83A5328 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6981963827A152E4BACD3A0873EF02AA /* MLMenu.xcconfig */;
+			baseConfigurationReference = 44A216DB165B40790306CA3A1CD716D3 /* MLMenu.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
