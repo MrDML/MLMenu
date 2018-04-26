@@ -23,7 +23,10 @@ it, simply add the following line to your Podfile:
 pod 'MLMenu' / pod 'MLMenu', '~> 0.1.7'
 ```
 ## Use
-
+// 导入头文件
+```````````
+#import <MLMenu/MLMenu.h>
+```````````
 ```````````
 // 标题数组 必传
 NSArray *titles = @[@"发起群聊",@"添加朋友",@"扫一扫",@"收付款"];
