@@ -10,7 +10,7 @@
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Preview
-![Demo](https://github.com/MrDML/MLMenu/blob/master/MLMenu.gif)
+![Demo](https://github.com/MrDML/MLMenu/blob/master/MLMenuGif.gif)
 
 ## Requirements!
 iOS 8.0
@@ -28,25 +28,74 @@ pod 'MLMenu' / pod 'MLMenu', '~> 0.1.7'
 #import <MLMenu/MLMenu.h>
 ```````````
 ```````````
-// 标题数组 必传
-NSArray *titles = @[@"发起群聊",@"添加朋友",@"扫一扫",@"收付款"];
-// 图片数组
-NSArray *images = @[@"scan",@"scan",@"scan",@"scan"];
+- (void)testCode_One
+{
+    NSArray *titles = @[@"发起群聊",@"添加朋友",@"扫一扫",@"收付款"];
+   
+    MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4) WithTitles:titles WithImageNames:nil WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight WithTriangleOffsetLeft:80 triangleColor:[UIColor whiteColor]];
+    menuView.separatorOffSet = 10;
+    menuView.separatorColor = MLClolor(51, 51, 51, 1);
+    [menuView setMenuViewBackgroundColor:[UIColor whiteColor]];
+    menuView.titleColor = [UIColor blackColor];
+    [menuView setCoverViewBackgroundColor:MLClolor(51, 51, 51, 0.5)];
+    menuView.didSelectBlock = ^(NSInteger index) {
+        NSLog(@"%zd",index);
+    };
+    [menuView showMenuEnterAnimation:MLEnterAnimationStyleNone];
+    
+}
 
-// 初始化一个带有三角形菜单控件
-MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:
-CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4)
-WithTitles:titles WithImageNames:images
-WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight
-WithTriangleOffsetLeft:80];
+- (void)testCode_Two
+{
+    NSArray *titles = @[@"发起群聊",@"添加朋友",@"扫一扫",@"收付款"];
+    NSArray *images = @[@"scan",@"scan",@"scan",@"scan"];
 
-// 设置覆盖层背景颜色 默认是透明
-[menuView setCoverViewBackgroundColor:[UIColor lightGrayColor]];
-// 提供block回调和代理回调
-menuView.didSelectBlock = ^(NSInteger index) {
-NSLog(@"%zd",index);
-};
-[menuView showMenuEnterAnimation:MLEnterAnimationStyleNone];
+    MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4) WithTitles:titles WithImageNames:images WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight WithTriangleOffsetLeft:80 triangleColor:nil];
+    menuView.didSelectBlock = ^(NSInteger index) {
+        NSLog(@"%zd",index);
+    };
+    [menuView showMenuEnterAnimation:MLEnterAnimationStyleNone];
+}
+
+
+- (void)testCode_Three
+{
+    NSArray *titles = @[@"发起群聊",@"添加朋友",@"扫一扫",@"收付款"];
+    NSArray *images = @[@"scan",@"scan",@"scan",@"scan"];
+    MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4) WithTitles:titles WithImageNames:images WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight WithTriangleOffsetLeft:80 triangleColor:nil];
+    menuView.didSelectBlock = ^(NSInteger index) {
+        NSLog(@"%zd",index);
+    };
+    [menuView showMenuEnterAnimation:MLEnterAnimationStyleRight];
+}
+
+- (void)testCode_Four
+{
+    NSArray *titles = @[@"发起群聊",@"添加朋友",@"扫一扫",@"收付款"];
+    NSArray *images = @[@"scan",@"scan",@"scan",@"scan"];
+    
+        MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4)  WithTitles:titles WithImageNames:images WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight];
+    [menuView setCoverViewBackgroundColor:[UIColor lightGrayColor]];
+    menuView.didSelectBlock = ^(NSInteger index) {
+        NSLog(@"%zd",index);
+    };
+    [menuView showMenuEnterAnimation:MLEnterAnimationStyleTop];
+}
+
+- (void)testCode_Five
+{
+    NSArray *titles = @[@"发起群聊",@"添加朋友",@"扫一扫",@"收付款"];
+
+    MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4) WithTitles:titles WithImageNames:nil WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight WithTriangleOffsetLeft:80 triangleColor:[UIColor whiteColor]];
+    [menuView setCoverViewBackgroundColor:MLClolor(51, 51, 51, 0.5)];
+    menuView.separatorColor = MLClolor(51, 51, 51, 0.5);
+    [menuView setMenuViewBackgroundColor:[UIColor whiteColor]];
+    menuView.titleColor =  MLClolor(51, 51, 51, 1);
+    menuView.didSelectBlock = ^(NSInteger index) {
+        NSLog(@"%zd",index);
+    };
+    [menuView showMenuEnterAnimation:MLEnterAnimationStyleNone];
+}
 ```````````
 
 ## Other Use
