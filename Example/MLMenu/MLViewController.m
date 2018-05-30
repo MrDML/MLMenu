@@ -58,8 +58,6 @@
     menuView.separatorColor = MLClolor(51, 51, 51, 1);
     [menuView setMenuViewBackgroundColor:[UIColor whiteColor]];
     menuView.titleColor = [UIColor blackColor];
-   
-    
     [menuView setCoverViewBackgroundColor:MLClolor(51, 51, 51, 0.5)];
     menuView.didSelectBlock = ^(NSInteger index) {
         NSLog(@"%zd",index);
@@ -74,7 +72,6 @@
     NSArray *images = @[@"scan",@"scan",@"scan",@"scan"];
 
     MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4) WithTitles:titles WithImageNames:images WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight WithTriangleOffsetLeft:80 triangleColor:nil];
-    [menuView setCoverViewBackgroundColor:[UIColor lightGrayColor]];
     menuView.didSelectBlock = ^(NSInteger index) {
         NSLog(@"%zd",index);
     };
@@ -98,7 +95,7 @@
     NSArray *titles = @[@"发起群聊",@"添加朋友",@"扫一扫",@"收付款"];
     NSArray *images = @[@"scan",@"scan",@"scan",@"scan"];
     
-        MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4)  WithTitles:titles WithImageNames:images WithMenuViewOffsetTop:64];
+        MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4)  WithTitles:titles WithImageNames:images WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight];
     [menuView setCoverViewBackgroundColor:[UIColor lightGrayColor]];
     menuView.didSelectBlock = ^(NSInteger index) {
         NSLog(@"%zd",index);
@@ -110,8 +107,11 @@
 {
     NSArray *titles = @[@"发起群聊",@"添加朋友",@"扫一扫",@"收付款"];
 
-    MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4) WithTitles:titles WithImageNames:nil WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight WithTriangleOffsetLeft:80 triangleColor:nil];
-    [menuView setCoverViewBackgroundColor:[UIColor lightGrayColor]];
+    MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4) WithTitles:titles WithImageNames:nil WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight WithTriangleOffsetLeft:80 triangleColor:[UIColor whiteColor]];
+    [menuView setCoverViewBackgroundColor:MLClolor(51, 51, 51, 0.5)];
+    menuView.separatorColor = MLClolor(51, 51, 51, 0.5);
+    [menuView setMenuViewBackgroundColor:[UIColor whiteColor]];
+    menuView.titleColor =  MLClolor(51, 51, 51, 1);
     menuView.didSelectBlock = ^(NSInteger index) {
         NSLog(@"%zd",index);
     };
