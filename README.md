@@ -101,14 +101,16 @@ pod 'MLMenu' / pod 'MLMenu', '~> 1.0.0'
 ## Other Use
 
 `````
-// 设置线条颜色
+// 设置线条颜色(线条可调整透明度)
 menuView.separatorColor = [UIColor ...];
 // 设置字体大小
 menuView.font = [UIFont systemFontOfSize:...];
 // 设置字体颜色
 menuView.titleColor = [UIColor ...];
 // 设置背景颜色
-menuView.backgroundColor = [UIColor ...];
+[menuView setMenuViewBackgroundColor:...];
+// 设置蒙版背景颜色
+[menuView setCoverViewBackgroundColor:..];
 
 `````
 
