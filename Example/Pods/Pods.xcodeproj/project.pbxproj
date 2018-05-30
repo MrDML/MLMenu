@@ -7,19 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04A22D6227FAA3D51DA45C5BE653149B /* MLMenuCell.h in Headers */ = {isa = PBXBuildFile; fileRef = C7B02488FBDCC37ABCB975212E9DF667 /* MLMenuCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		055DF8EF9E420B792DBEEA8C06A35054 /* MLMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8C63AFC87E35108DC405101B4E1414 /* MLMenu-dummy.m */; };
-		24E4FF8E6A9F65AB518C0662ED18422E /* MLMenuItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CDAD201473EA1CCC80134EBB14473FD /* MLMenuItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2A97D4AADA68A4EEC46F9FFCE9909648 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		314B68A337B09DC904F4EEBC30AC7665 /* MLMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C3DB83F64D453691F15A2F83DAFC3BAA /* MLMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		395541A60F3C5C52A2901474D5C85253 /* MLMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEF100C4B75A6D0FFA9A4680C6A00D7 /* MLMenu-dummy.m */; };
 		3E4C079F861A26D3DB9EA4F9B9E131D1 /* Pods-MLMenu_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF34BD81E56285ED315B32525D63383 /* Pods-MLMenu_Example-dummy.m */; };
-		443B286A782359364C2600883A7DB2EB /* MLMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D37FF779472F04BE697183E0CB13ED0A /* MLMenuCell.m */; };
+		4C8DBCD5F20EA2D5F5DA77F8CD54390A /* MLMenuItemsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2527BEE7A8FB05E08D1E272ABBD4D041 /* MLMenuItemsView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5AFC502DD4A673CA3070D742DC9CF74E /* Pods-MLMenu_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C61259CC8E2A3ACA9909DEC90D89C00F /* Pods-MLMenu_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6E43FB7AE698DDAB36D4A4195E715928 /* MLMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6D5500F618F0AD48C36D05D8FED9AA /* MLMenuItem.m */; };
-		9C3718DB0CD48E87F93FF644917CD5F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		A9C68709A1756D2283B6A25669DF545A /* MLMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F253D7F8060ECF8F7B47C837AFF8367 /* MLMenuView.m */; };
-		CF9BB8631B18BBEBB2449DB80E615EEF /* MLMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 531092625604E73B08554ED6FA121597 /* MLMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D050D648C89B6B27369EEDE923AA6FCA /* MLMenuView.h in Headers */ = {isa = PBXBuildFile; fileRef = 429E869A79746B58C9AA7E66823EB1EF /* MLMenuView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DE075C46AF7C8CD74E69F676082F816 /* MLMenuItemsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A3768E7C4D679C907128F233B43554 /* MLMenuItemsView.m */; };
+		C9F53BF7520F4E8B5D3EFE8794F3E340 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		DFE433A40A31188876FEE5DD45209F74 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		E292B3679487EF5856D759A1E80C2810 /* MLMenuView.h in Headers */ = {isa = PBXBuildFile; fileRef = CB53827E39A5ACC8E47787AE7B02C8AB /* MLMenuView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F6DBE6184D7F7051C341779BFF6CBB5E /* MLMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6563DD20A0F2F4079339EE48412044D1 /* MLMenuView.m */; };
+		F8F5B95D0BD11C65F3A6D40CA376999C /* MLMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D79F2A542909D8F1D3EBCBC05D4E2B40 /* MLMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,41 +24,38 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1128669F1544A5C91A2B0877D3BE12F6;
+			remoteGlobalIDString = 9F525A422BA999177138A5952E4F7603;
 			remoteInfo = MLMenu;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		035C9C7426AB2B194A8ABBF22093089D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		03FD5152BAD95AB9B1CB48991C76D482 /* Pods-MLMenu_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MLMenu_Example.release.xcconfig"; sourceTree = "<group>"; };
 		0D086AA3607392E3CF4A55CE609472CB /* Pods-MLMenu_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MLMenu_Example-frameworks.sh"; sourceTree = "<group>"; };
 		170FBEABED97222EBABC339A1E2F019E /* Pods_MLMenu_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MLMenu_Example.framework; path = "Pods-MLMenu_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2CDAD201473EA1CCC80134EBB14473FD /* MLMenuItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLMenuItem.h; path = MLMenu/Classes/MLMenuItem.h; sourceTree = "<group>"; };
+		1D47DF0DF7A4DCAF6BF210BBDF3A4CD0 /* MLMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MLMenu.xcconfig; sourceTree = "<group>"; };
+		21A3768E7C4D679C907128F233B43554 /* MLMenuItemsView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLMenuItemsView.m; path = MLMenu/Classes/MLMenuItemsView.m; sourceTree = "<group>"; };
+		2527BEE7A8FB05E08D1E272ABBD4D041 /* MLMenuItemsView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLMenuItemsView.h; path = MLMenu/Classes/MLMenuItemsView.h; sourceTree = "<group>"; };
 		3A5E13E56B0B7F2564E2C204ADCEC8E2 /* Pods-MLMenu_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MLMenu_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		3E56A5215296A07C9B1F020231BD454E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		40BFB2CCFB5ED0B2ABC7580E874269BB /* MLMenu.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = MLMenu.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		429E869A79746B58C9AA7E66823EB1EF /* MLMenuView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLMenuView.h; path = MLMenu/Classes/MLMenuView.h; sourceTree = "<group>"; };
-		44A216DB165B40790306CA3A1CD716D3 /* MLMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MLMenu.xcconfig; sourceTree = "<group>"; };
-		4BBBDF24A54796F65DEBD4145E4A4A09 /* MLMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MLMenu.modulemap; sourceTree = "<group>"; };
-		531092625604E73B08554ED6FA121597 /* MLMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLMenu.h; path = MLMenu/Classes/MLMenu.h; sourceTree = "<group>"; };
-		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3FEF100C4B75A6D0FFA9A4680C6A00D7 /* MLMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MLMenu-dummy.m"; sourceTree = "<group>"; };
+		401E20B75A5FBD6FCAB39DA341AE0B8B /* MLMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MLMenu-prefix.pch"; sourceTree = "<group>"; };
+		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6465A5239AD8F08F68272E66F36CE1D3 /* MLMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MLMenu.modulemap; sourceTree = "<group>"; };
+		6563DD20A0F2F4079339EE48412044D1 /* MLMenuView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLMenuView.m; path = MLMenu/Classes/MLMenuView.m; sourceTree = "<group>"; };
 		7311DB7E3E5A4E78A35F385EEC08D89A /* Pods-MLMenu_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MLMenu_Example-resources.sh"; sourceTree = "<group>"; };
-		7E6D5500F618F0AD48C36D05D8FED9AA /* MLMenuItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLMenuItem.m; path = MLMenu/Classes/MLMenuItem.m; sourceTree = "<group>"; };
-		7F253D7F8060ECF8F7B47C837AFF8367 /* MLMenuView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLMenuView.m; path = MLMenu/Classes/MLMenuView.m; sourceTree = "<group>"; };
 		8B9F21A0144A3454045C777EB7F05316 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		985B065D3E9CB7BC7CCE02AB9A740A39 /* MLMenu.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = MLMenu.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		99E6438172C01E4C67D28EFBE8402942 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD1DC168B9F18698F4B8ADBA304297CD /* Pods-MLMenu_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MLMenu_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B0DC4E1F28B84C585B0F7EA6F5841043 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		B18B14056B454ECD7D0B8A2BF98CD543 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		BA6D6898F0EE8DF1367FD20CA93E03CB /* MLMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MLMenu.framework; path = MLMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3DB83F64D453691F15A2F83DAFC3BAA /* MLMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MLMenu-umbrella.h"; sourceTree = "<group>"; };
 		C3DBDDEC3CB2983541E1459707B24F04 /* Pods-MLMenu_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MLMenu_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C61259CC8E2A3ACA9909DEC90D89C00F /* Pods-MLMenu_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MLMenu_Example-umbrella.h"; sourceTree = "<group>"; };
-		C7B02488FBDCC37ABCB975212E9DF667 /* MLMenuCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLMenuCell.h; path = MLMenu/Classes/MLMenuCell.h; sourceTree = "<group>"; };
-		CD8C63AFC87E35108DC405101B4E1414 /* MLMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MLMenu-dummy.m"; sourceTree = "<group>"; };
-		D266A14EC7696829731FEAF123A333BF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D37FF779472F04BE697183E0CB13ED0A /* MLMenuCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLMenuCell.m; path = MLMenu/Classes/MLMenuCell.m; sourceTree = "<group>"; };
+		CB53827E39A5ACC8E47787AE7B02C8AB /* MLMenuView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLMenuView.h; path = MLMenu/Classes/MLMenuView.h; sourceTree = "<group>"; };
+		D79F2A542909D8F1D3EBCBC05D4E2B40 /* MLMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MLMenu-umbrella.h"; sourceTree = "<group>"; };
 		DB583B22EE3DA033E6E2E815A2874A05 /* Pods-MLMenu_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MLMenu_Example.modulemap"; sourceTree = "<group>"; };
-		DCCCA12889286DFDFA73221A638FA198 /* MLMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MLMenu-prefix.pch"; sourceTree = "<group>"; };
 		FDF34BD81E56285ED315B32525D63383 /* Pods-MLMenu_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MLMenu_Example-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,27 +64,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A97D4AADA68A4EEC46F9FFCE9909648 /* Foundation.framework in Frameworks */,
+				C9F53BF7520F4E8B5D3EFE8794F3E340 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B36A892F5490B7D8AC369DDF3AA6D6A7 /* Frameworks */ = {
+		ADD5B30BA406ECF045653EF0C2BA5B9B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C3718DB0CD48E87F93FF644917CD5F3 /* Foundation.framework in Frameworks */,
+				DFE433A40A31188876FEE5DD45209F74 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4CC2B7386BEDA8F05DCAF66DB34F38AC /* Pod */ = {
+		524D160B629FDCCA46BBE7792DB66200 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				3E56A5215296A07C9B1F020231BD454E /* LICENSE */,
-				40BFB2CCFB5ED0B2ABC7580E874269BB /* MLMenu.podspec */,
-				035C9C7426AB2B194A8ABBF22093089D /* README.md */,
+				B0DC4E1F28B84C585B0F7EA6F5841043 /* LICENSE */,
+				985B065D3E9CB7BC7CCE02AB9A740A39 /* MLMenu.podspec */,
+				B18B14056B454ECD7D0B8A2BF98CD543 /* README.md */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
@@ -103,11 +97,27 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		6A5B6569F90794CDE042603CE5479C1B /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB58D7964C1151AB8AD92DCB352331AC /* MLMenu */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				A616754C8C2576B4D7512C553B6961BF /* Development Pods */,
+				6A5B6569F90794CDE042603CE5479C1B /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				F519731938F5E623B062A6A8A71DCC08 /* Products */,
 				5DD3B8EB7369390E2A80208A19881143 /* Targets Support Files */,
@@ -132,59 +142,40 @@
 			path = "Target Support Files/Pods-MLMenu_Example";
 			sourceTree = "<group>";
 		};
-		A616754C8C2576B4D7512C553B6961BF /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E9178BCDCA4B579998466714D3FC76A6 /* MLMenu */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+				5E0D919E635D23B70123790B8308F8EF /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+		CB58D7964C1151AB8AD92DCB352331AC /* MLMenu */ = {
 			isa = PBXGroup;
 			children = (
-				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		D5157806BA333FD54072F765D555536E /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				D266A14EC7696829731FEAF123A333BF /* Info.plist */,
-				4BBBDF24A54796F65DEBD4145E4A4A09 /* MLMenu.modulemap */,
-				44A216DB165B40790306CA3A1CD716D3 /* MLMenu.xcconfig */,
-				CD8C63AFC87E35108DC405101B4E1414 /* MLMenu-dummy.m */,
-				DCCCA12889286DFDFA73221A638FA198 /* MLMenu-prefix.pch */,
-				C3DB83F64D453691F15A2F83DAFC3BAA /* MLMenu-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/MLMenu";
-			sourceTree = "<group>";
-		};
-		E9178BCDCA4B579998466714D3FC76A6 /* MLMenu */ = {
-			isa = PBXGroup;
-			children = (
-				531092625604E73B08554ED6FA121597 /* MLMenu.h */,
-				C7B02488FBDCC37ABCB975212E9DF667 /* MLMenuCell.h */,
-				D37FF779472F04BE697183E0CB13ED0A /* MLMenuCell.m */,
-				2CDAD201473EA1CCC80134EBB14473FD /* MLMenuItem.h */,
-				7E6D5500F618F0AD48C36D05D8FED9AA /* MLMenuItem.m */,
-				429E869A79746B58C9AA7E66823EB1EF /* MLMenuView.h */,
-				7F253D7F8060ECF8F7B47C837AFF8367 /* MLMenuView.m */,
-				4CC2B7386BEDA8F05DCAF66DB34F38AC /* Pod */,
-				D5157806BA333FD54072F765D555536E /* Support Files */,
+				2527BEE7A8FB05E08D1E272ABBD4D041 /* MLMenuItemsView.h */,
+				21A3768E7C4D679C907128F233B43554 /* MLMenuItemsView.m */,
+				CB53827E39A5ACC8E47787AE7B02C8AB /* MLMenuView.h */,
+				6563DD20A0F2F4079339EE48412044D1 /* MLMenuView.m */,
+				524D160B629FDCCA46BBE7792DB66200 /* Pod */,
+				E9C21767B2192ED1D91E3F1181521503 /* Support Files */,
 			);
 			name = MLMenu;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		E9C21767B2192ED1D91E3F1181521503 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				99E6438172C01E4C67D28EFBE8402942 /* Info.plist */,
+				6465A5239AD8F08F68272E66F36CE1D3 /* MLMenu.modulemap */,
+				1D47DF0DF7A4DCAF6BF210BBDF3A4CD0 /* MLMenu.xcconfig */,
+				3FEF100C4B75A6D0FFA9A4680C6A00D7 /* MLMenu-dummy.m */,
+				401E20B75A5FBD6FCAB39DA341AE0B8B /* MLMenu-prefix.pch */,
+				D79F2A542909D8F1D3EBCBC05D4E2B40 /* MLMenu-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/MLMenu";
 			sourceTree = "<group>";
 		};
 		F519731938F5E623B062A6A8A71DCC08 /* Products */ = {
@@ -207,28 +198,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B8F3CFECA7F0FB29C879FED60A6E732C /* Headers */ = {
+		6653EDCB2CE64D3E32803460931A81A9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				314B68A337B09DC904F4EEBC30AC7665 /* MLMenu-umbrella.h in Headers */,
-				CF9BB8631B18BBEBB2449DB80E615EEF /* MLMenu.h in Headers */,
-				04A22D6227FAA3D51DA45C5BE653149B /* MLMenuCell.h in Headers */,
-				24E4FF8E6A9F65AB518C0662ED18422E /* MLMenuItem.h in Headers */,
-				D050D648C89B6B27369EEDE923AA6FCA /* MLMenuView.h in Headers */,
+				F8F5B95D0BD11C65F3A6D40CA376999C /* MLMenu-umbrella.h in Headers */,
+				4C8DBCD5F20EA2D5F5DA77F8CD54390A /* MLMenuItemsView.h in Headers */,
+				E292B3679487EF5856D759A1E80C2810 /* MLMenuView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1128669F1544A5C91A2B0877D3BE12F6 /* MLMenu */ = {
+		9F525A422BA999177138A5952E4F7603 /* MLMenu */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E3D5204CEA4B6C2A88446EB92B13E7E /* Build configuration list for PBXNativeTarget "MLMenu" */;
+			buildConfigurationList = 77F412DF684F4D0C285EC36FB65213FB /* Build configuration list for PBXNativeTarget "MLMenu" */;
 			buildPhases = (
-				B59C24F7E3292BA498B733FC010F3314 /* Sources */,
-				B36A892F5490B7D8AC369DDF3AA6D6A7 /* Frameworks */,
-				B8F3CFECA7F0FB29C879FED60A6E732C /* Headers */,
+				78F490612F0E6CF66726043B8973F007 /* Sources */,
+				ADD5B30BA406ECF045653EF0C2BA5B9B /* Frameworks */,
+				6653EDCB2CE64D3E32803460931A81A9 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -278,21 +267,20 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1128669F1544A5C91A2B0877D3BE12F6 /* MLMenu */,
+				9F525A422BA999177138A5952E4F7603 /* MLMenu */,
 				E5B605CB959D437D57543E81501E429D /* Pods-MLMenu_Example */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		B59C24F7E3292BA498B733FC010F3314 /* Sources */ = {
+		78F490612F0E6CF66726043B8973F007 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				055DF8EF9E420B792DBEEA8C06A35054 /* MLMenu-dummy.m in Sources */,
-				443B286A782359364C2600883A7DB2EB /* MLMenuCell.m in Sources */,
-				6E43FB7AE698DDAB36D4A4195E715928 /* MLMenuItem.m in Sources */,
-				A9C68709A1756D2283B6A25669DF545A /* MLMenuView.m in Sources */,
+				395541A60F3C5C52A2901474D5C85253 /* MLMenu-dummy.m in Sources */,
+				7DE075C46AF7C8CD74E69F676082F816 /* MLMenuItemsView.m in Sources */,
+				F6DBE6184D7F7051C341779BFF6CBB5E /* MLMenuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,73 +298,12 @@
 		47FEC76E51FEEDB21925AF803BF1B0EB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MLMenu;
-			target = 1128669F1544A5C91A2B0877D3BE12F6 /* MLMenu */;
+			target = 9F525A422BA999177138A5952E4F7603 /* MLMenu */;
 			targetProxy = 6C6705405AA085A5D49B97E52FAFD03F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		295E4DC5F729B885FE4C856A7ADAB812 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44A216DB165B40790306CA3A1CD716D3 /* MLMenu.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MLMenu/MLMenu-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MLMenu/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MLMenu/MLMenu.modulemap";
-				PRODUCT_MODULE_NAME = MLMenu;
-				PRODUCT_NAME = MLMenu;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		7E4941E97EAB89B84FC51714E83A5328 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44A216DB165B40790306CA3A1CD716D3 /* MLMenu.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MLMenu/MLMenu-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MLMenu/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MLMenu/MLMenu.modulemap";
-				PRODUCT_MODULE_NAME = MLMenu;
-				PRODUCT_NAME = MLMenu;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		8B33C5230DE4A9DFA6D8F46505DD7AF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -565,6 +492,67 @@
 			};
 			name = Release;
 		};
+		DE72F6CF1E2310041B5DDB97FDC31880 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D47DF0DF7A4DCAF6BF210BBDF3A4CD0 /* MLMenu.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MLMenu/MLMenu-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MLMenu/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MLMenu/MLMenu.modulemap";
+				PRODUCT_MODULE_NAME = MLMenu;
+				PRODUCT_NAME = MLMenu;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F04E34A0D67FF7E33B3E18C4C6F2E3AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D47DF0DF7A4DCAF6BF210BBDF3A4CD0 /* MLMenu.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MLMenu/MLMenu-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MLMenu/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MLMenu/MLMenu.modulemap";
+				PRODUCT_MODULE_NAME = MLMenu;
+				PRODUCT_NAME = MLMenu;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -577,11 +565,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4E3D5204CEA4B6C2A88446EB92B13E7E /* Build configuration list for PBXNativeTarget "MLMenu" */ = {
+		77F412DF684F4D0C285EC36FB65213FB /* Build configuration list for PBXNativeTarget "MLMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7E4941E97EAB89B84FC51714E83A5328 /* Debug */,
-				295E4DC5F729B885FE4C856A7ADAB812 /* Release */,
+				DE72F6CF1E2310041B5DDB97FDC31880 /* Debug */,
+				F04E34A0D67FF7E33B3E18C4C6F2E3AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -7,28 +7,37 @@
 //
 
 #import "MLMenuView.h"
-#import "MLMenu.h"
-
+#import "MLMenuItemsView.h"
+#define  MLClolor(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#define  k_ScreenHeight   [UIScreen mainScreen].bounds.size.height
+#define  k_ScreenWidth   [UIScreen mainScreen].bounds.size.width
+#define  k_StatusBarHeight    [UIApplication sharedApplication].statusBarFrame.size.height
+#define  k_NavigationBarHeight  44.f
+#define  k_StatusBarAndNavigationBarHeight   (k_StatusBarHeight + k_NavigationBarHeight)
+#define FontSizeDefault   [UIFont systemFontOfSize:14]
+#define TitleColorDefault [UIColor whiteColor]
+#define SeparatorColorDefault [UIColor whiteColor]
+#define SeparatorOffsetDefault 0
 
 static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
 
-@interface MLMenuView ()<UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>{
+@interface MLMenuView ()<UIGestureRecognizerDelegate>{
     CGRect _frame;
     CGFloat _triangleOffsetLeft;
     CGFloat _menuViewOffsetTop;
     BOOL _isHasTriangle;
     MLEnterAnimationStyle _animationStyle;
+    UIColor *_triangleColor;
 }
-@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIView *coverView;
-@property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) UIView *contentView;
+@property (nonatomic, strong) MLMenuItemsView *itemsView;
 @end
 
 @implementation MLMenuView
 
 
-- (instancetype)initWithFrame:(CGRect)frame WithTitles:(NSArray *)titles WithImageNames:(NSArray *)imageNames WithMenuViewOffsetTop:(CGFloat)top WithTriangleOffsetLeft:(CGFloat)left
+- (instancetype)initWithFrame:(CGRect)frame WithTitles:(nonnull NSArray *)titles WithImageNames:(nullable NSArray *)imageNames WithMenuViewOffsetTop:(CGFloat)top WithTriangleOffsetLeft:(CGFloat)left triangleColor:(nullable UIColor *)triangleColor
 {
     self = [super initWithFrame:CGRectMake(0, 0, k_ScreenWidth, k_ScreenHeight)];
     if (self) {
@@ -37,50 +46,27 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
         _triangleOffsetLeft = left;
         _menuViewOffsetTop = top;
         _isHasTriangle = YES;
-        self.titles = titles;
-        self.imageNames = imageNames;
+        _titles = titles;
+        _imageNames = imageNames;
+        _triangleColor = (triangleColor != nil)?triangleColor :MLClolor(73, 72, 75, 1);
         self.backgroundColor = [UIColor clearColor];
-        
-        
+
     }
     return self;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame WithTitles:(NSArray *)titles WithImageNames:(NSArray *)imageNames WithMenuViewOffsetTop:(CGFloat)top
+- (instancetype)initWithFrame:(CGRect)frame WithTitles:(nonnull NSArray *)titles WithImageNames:(nullable NSArray *)imageNames WithMenuViewOffsetTop:(CGFloat)top
 {
 
-     self = [self initWithFrame:frame WithTitles:titles WithImageNames:imageNames WithMenuViewOffsetTop:top WithTriangleOffsetLeft:0];
+    self = [self initWithFrame:frame WithTitles:titles WithImageNames:imageNames WithMenuViewOffsetTop:top WithTriangleOffsetLeft:0 triangleColor:nil];
     _isHasTriangle = NO;
     return self;
 }
 
 
-- (void)delaDataWithTitles:(NSArray *)titles WithImageNames:(NSArray *)imageNames
-{
-    int i = 0;
-    [self.dataArray removeAllObjects];
-    if (titles.count <= 0) return;
-    for (NSString *title in titles) {
-        NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
-        [dictM setValue:title forKey:@"title"];
-        [dictM setValue:imageNames[i] forKey:@"imageName"];
-        MLMenuItem *item = [MLMenuItem menuItemWithDict:dictM];
-        item.fontSzie = 14;
-        item.titleColor = [UIColor whiteColor];
-        item.separatorColor = MLClolor(92, 92, 92, 1);
-        item.imageNames = imageNames;
-        item.titls = titles;
-        [self.dataArray addObject:item];
-        i ++;
-    }
-    [self.tableView reloadData];
-    
-}
-
 - (void)setMenuViewBackgroundColor:(UIColor *)backgroundColor
 {
-    self.backgroundColor = [UIColor clearColor];
-    self.tableView.backgroundColor = backgroundColor != nil ? self.tableView.backgroundColor = backgroundColor : MLClolor(73, 72, 75, 1);;
+    self.itemsView.contentColor = backgroundColor;
 }
 
 - (void)setCoverViewBackgroundColor:(UIColor *)backgroundColor
@@ -92,49 +78,44 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
 - (void)setTitleColor:(UIColor *)titleColor
 {
     _titleColor = titleColor;
-    if (self.dataArray.count > 0) return;
-    for (MLMenuItem *item in self.dataArray) {
-        item.titleColor = titleColor;
-    }
-    [self.tableView reloadData];
+    self.itemsView.titleColor = _titleColor;
 }
 
 - (void)setTitles:(NSArray *)titles
 {
     _titles = titles;
-     [self delaDataWithTitles:titles WithImageNames:self.imageNames];
+    self.itemsView.titles = _titles;
 }
 
 - (void)setImageNames:(NSArray *)imageNames
 {
     _imageNames = imageNames;
-    [self delaDataWithTitles:self.titles WithImageNames:imageNames];
-    
+    self.itemsView.imageNames = _imageNames;
 }
 
 - (void)setTitleFont:(UIFont *)font
 {
     _font = font;
-
-    if (self.dataArray.count > 0) return;
-    for (MLMenuItem *item in self.dataArray) {
-        item.fontSzie = font.pointSize;
-    }
-    [self.tableView reloadData];
-   
+    self.itemsView.font = _font;
 }
 
 - (void)setSeparatorColor:(UIColor *)separatorColor
 {
     _separatorColor = separatorColor;
-    if (self.dataArray.count > 0) return;
-    for (MLMenuItem *item in self.dataArray) {
-        item.separatorColor = separatorColor;
-    }
-    [self.tableView reloadData];
+    self.itemsView.separatorColor = _separatorColor;
 }
 
 
+- (void)setSeparatorOffSet:(CGFloat)separatorOffSet
+{
+    _separatorOffSet = separatorOffSet;
+    self.itemsView.separatorOffset = _separatorOffSet;
+}
+
+- (void)setSeparatorAlpha:(CGFloat)separatorAlpha{
+    _separatorAlpha = separatorAlpha;
+    self.itemsView.separatorAlpha = _separatorAlpha;
+}
 
 
 
@@ -144,31 +125,50 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
     [window addSubview:self];
     [self addSubview:self.coverView];
     [self.coverView addSubview:self.contentView];
-    [self.contentView addSubview:self.tableView];
-    [self drawRectTableViewcornerRadius];
+   
+    [self.contentView addSubview:self.itemsView];
     _isHasTriangle ? [self drawRectCoverViewTriangleOffset:_triangleOffsetLeft] : nil;
-
-    [self.tableView registerClass:[MLMenuCell class] forCellReuseIdentifier:IDETIFIRE];
     
 }
-
-
-- (void)drawRectTableViewcornerRadius
-{
-    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, self.tableView.frame.size.width, self.tableView.frame.size.height) cornerRadius:5];
-    CAShapeLayer *layer = [CAShapeLayer layer];
-    layer.path = path.CGPath;
-    self.tableView.layer.mask = layer;
-}
-
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-
-    self.tableView.frame = CGRectMake(0,  _isHasTriangle ? 10 : 0, _frame.size.width, _frame.size.height);
-    self.contentView.frame = CGRectMake(_frame.origin.x, 0, _frame.size.width, _isHasTriangle? _frame.size.height + 10 : _frame.size.height);
+    
+    CGFloat itemHeight = 45;
+    NSInteger count = self.titles.count;
+    
+    CGRect frame = CGRectZero;
+    frame.origin.x = _frame.origin.x;
+    frame.origin.y = 0;
+    frame.size.width = _frame.size.width;
+    frame.size.height = _isHasTriangle? (itemHeight * count) + 10 : itemHeight * count;
+    self.contentView.frame = frame;
+    
+    
+    CGRect frameItemsView = CGRectZero;
+    frameItemsView.origin.x = 0;
+    frameItemsView.origin.y = _isHasTriangle ? 10 : 0;
+    frameItemsView.size.width = self.contentView.frame.size.width;
+    frameItemsView.size.height = _isHasTriangle? self.contentView.frame.size.height - 10 : self.contentView.frame.size.height;
+    self.itemsView.frame = frameItemsView;
+   __weak typeof(self)WeakSelf = self;
+    self.itemsView.menuDidSelectBlock = ^(NSInteger index) {
+        if ([WeakSelf.delegate respondsToSelector:@selector(menuView:DidselectItemIndex:)]) {
+            [WeakSelf.delegate menuView:WeakSelf DidselectItemIndex:index];
+        }
+        if (WeakSelf.didSelectBlock) {
+            WeakSelf.didSelectBlock(index);
+        }
+        
+    };
+   
+    
+   
 }
+
+
+
 
 
 
@@ -176,9 +176,7 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
 {
     
    _animationStyle = animationStyle;
-    [self setSubViews];
-    [self delaDataWithTitles:self.titles WithImageNames:self.imageNames];
-
+     [self setSubViews];
     if (animationStyle == MLEnterAnimationStyleRight) {
         self.contentView.layer.position = CGPointMake(_frame.origin.x + _frame.size.width, 0);
         self.contentView.layer.anchorPoint = CGPointMake(1, 0);
@@ -261,44 +259,6 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
 }
 
 
-#pragma mark UITableViewDataSource , UITableViewDelegate
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return  1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.dataArray.count;
-}
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    MLMenuCell *cell =  [tableView dequeueReusableCellWithIdentifier:IDETIFIRE];
-    
-    if (!cell) {
-        cell = [[MLMenuCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:IDETIFIRE];
-    }
-    cell.backgroundColor = [UIColor clearColor];
-    MLMenuItem *item = self.dataArray[indexPath.row];
-    cell.menuItem = item;
-    return cell;
-    
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-   
-    if ([_delegate respondsToSelector:@selector(didselectItemIndex:)]) {
-        [_delegate didselectItemIndex:indexPath.row];
-    }
-    if (_didSelectBlock) {
-        _didSelectBlock(indexPath.row);
-    }
-    
-    [self hidMenuExitAnimation:_animationStyle];
-}
-
-
 #pragma mark Getter
 - (UIView *)coverView
 {
@@ -323,29 +283,13 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
 
 
 
-- (UITableView *)tableView
+- (MLMenuItemsView *)itemsView
 {
-    if (!_tableView) {
-        _tableView = [[UITableView alloc] init];
-        _tableView.frame = CGRectMake(0,  _isHasTriangle ? 10 : 0, _frame.size.width, _frame.size.height);
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-        _tableView.rowHeight = 44;
-        _tableView.scrollEnabled = NO;
-        _tableView.backgroundColor = MLClolor(73, 72, 75, 1);
-        _tableView.estimatedSectionFooterHeight = 0;
-        _tableView.estimatedSectionHeaderHeight = 0;
+    if (!_itemsView) {
+        _itemsView = [[MLMenuItemsView alloc] initWiithMenuItemTitles:self.titles ImageNames:self.imageNames];
+        _itemsView.backgroundColor =  [UIColor colorWithRed:73/255.0 green:72/255.0 blue:75/255.0 alpha:1];
     }
-    return _tableView;
-}
-
-- (NSMutableArray *)dataArray
-{
-    if (!_dataArray) {
-        _dataArray = [NSMutableArray array];
-    }
-    return _dataArray;
+    return _itemsView;
 }
 
 
@@ -361,7 +305,7 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
     [path addLineToPoint:CGPointMake(offset + 6, 10)];
     CAShapeLayer *layer =[CAShapeLayer layer];
     layer.path = path.CGPath;
-    [layer setFillColor:MLClolor(73, 72, 75, 1).CGColor];
+    [layer setFillColor:_triangleColor.CGColor];
     [self.contentView.layer addSublayer:layer];
 }
 

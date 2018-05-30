@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+
 @class MLMenuView;
 
 @protocol MLMenuViewDelegate <NSObject>
-- (void)didselectItemIndex:(NSInteger)index;
+- (void)menuView:(MLMenuView *)menu DidselectItemIndex:(NSInteger)index;
 @end
 
 typedef NS_ENUM(NSInteger,MLEnterAnimationStyle) {
@@ -20,45 +21,48 @@ typedef NS_ENUM(NSInteger,MLEnterAnimationStyle) {
     MLEnterAnimationStyleTop,
 };
 
-typedef void(^MLDidSelectBlock)(NSInteger index);
+typedef void(^menuDidSelectBlock)(NSInteger index);
 
 @interface MLMenuView : UIView
 
 
+
 /**
- MenuView 构造器 带有三角形的菜单
+ 构造器 带有三角形的菜单
 
  @param frame 位置
  @param titles 标题数组 必传
  @param imageNames 图片数组 可以传nil
  @param top MenuView 距离顶部的偏移量
  @param left 三角形距离左边的偏移量
+ @param triangleColor 填充三角形的颜色
  @return MenuView
  */
-- (instancetype)initWithFrame:(CGRect)frame WithTitles:(NSArray *)titles WithImageNames:(NSArray *)imageNames WithMenuViewOffsetTop:(CGFloat)top WithTriangleOffsetLeft:(CGFloat)left;
+- (instancetype)initWithFrame:(CGRect)frame WithTitles:(nonnull NSArray *)titles WithImageNames:(nullable NSArray *)imageNames WithMenuViewOffsetTop:(CGFloat)top WithTriangleOffsetLeft:(CGFloat)left triangleColor:(nullable UIColor *)triangleColor;
+
 
 
 /**
  MenuView 构造器 不带有三角形的菜单
-
+ 
  @param frame 位置
  @param titles 标题数组 必传
  @param imageNames 图片数组 可以传nil
  @param top 距离顶部的偏移量
  @return MenuView
  */
-- (instancetype)initWithFrame:(CGRect)frame WithTitles:(NSArray *)titles WithImageNames:(NSArray *)imageNames WithMenuViewOffsetTop:(CGFloat)top;
+- (instancetype)initWithFrame:(CGRect)frame WithTitles:(nonnull NSArray *)titles WithImageNames:(nullable NSArray *)imageNames WithMenuViewOffsetTop:(CGFloat)top;
 
 /**
  设置背景颜色
-
+ 
  @param backgroundColor backgroundColor description
  */
 - (void)setMenuViewBackgroundColor:(UIColor *)backgroundColor;
 
 /**
  设置蒙版层视图颜色
-
+ 
  @param backgroundColor backgroundColor description
  */
 - (void)setCoverViewBackgroundColor:(UIColor *)backgroundColor;
@@ -70,7 +74,7 @@ typedef void(^MLDidSelectBlock)(NSInteger index);
 /**
  选中item block 回调
  */
-@property (nonatomic, copy) MLDidSelectBlock didSelectBlock;
+@property (nonatomic, copy) menuDidSelectBlock didSelectBlock;
 
 /**
  设置标题颜色
@@ -84,21 +88,34 @@ typedef void(^MLDidSelectBlock)(NSInteger index);
 @property (nonatomic, strong) UIFont *font;
 
 
-/**
- 线条颜色
- */
-@property (nonatomic, strong) UIColor *separatorColor;
+
 
 /**
  标题数组
  */
 @property (nonatomic, strong) NSArray *titles;
 
-
 /**
  图片数组
  */
 @property (nonatomic, strong) NSArray *imageNames;
+/**
+ 线条颜色
+ */
+@property (nonatomic, strong) UIColor *separatorColor;
+/**
+ 设置线条距左右的间距
+ */
+@property (nonatomic, assign) CGFloat separatorOffSet;
+
+/**
+ 设置线条的透明度
+ */
+@property (nonatomic, assign) CGFloat separatorAlpha;
+
+
+
+
 
 /**
  呈现菜单

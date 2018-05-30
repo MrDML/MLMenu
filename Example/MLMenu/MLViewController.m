@@ -6,8 +6,14 @@
 //  Copyright (c) 2018 MrDML. All rights reserved.
 //
 
+#define  MLClolor(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#define  k_ScreenHeight   [UIScreen mainScreen].bounds.size.height
+#define  k_ScreenWidth   [UIScreen mainScreen].bounds.size.width
+#define  k_StatusBarHeight    [UIApplication sharedApplication].statusBarFrame.size.height
+#define  k_NavigationBarHeight  44.f
+#define  k_StatusBarAndNavigationBarHeight   (k_StatusBarHeight + k_NavigationBarHeight)
 #import "MLViewController.h"
-#import <MLMenu/MLMenu.h>
+#import <MLMenu/MLMenuView.h>
 @interface MLViewController ()
 
 @end
@@ -47,7 +53,14 @@
 {
     NSArray *titles = @[@"发起群聊",@"添加朋友",@"扫一扫",@"收付款"];
    
-    MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4) WithTitles:titles WithImageNames:nil WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight WithTriangleOffsetLeft:80];;
+    MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4) WithTitles:titles WithImageNames:nil WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight WithTriangleOffsetLeft:80 triangleColor:[UIColor whiteColor]];
+    menuView.separatorOffSet = 10;
+    menuView.separatorColor = MLClolor(51, 51, 51, 1);
+    [menuView setMenuViewBackgroundColor:[UIColor whiteColor]];
+    menuView.titleColor = [UIColor blackColor];
+   
+    
+    [menuView setCoverViewBackgroundColor:MLClolor(51, 51, 51, 0.5)];
     menuView.didSelectBlock = ^(NSInteger index) {
         NSLog(@"%zd",index);
     };
@@ -60,7 +73,7 @@
     NSArray *titles = @[@"发起群聊",@"添加朋友",@"扫一扫",@"收付款"];
     NSArray *images = @[@"scan",@"scan",@"scan",@"scan"];
 
-    MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4) WithTitles:titles WithImageNames:images WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight WithTriangleOffsetLeft:80];
+    MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4) WithTitles:titles WithImageNames:images WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight WithTriangleOffsetLeft:80 triangleColor:nil];
     [menuView setCoverViewBackgroundColor:[UIColor lightGrayColor]];
     menuView.didSelectBlock = ^(NSInteger index) {
         NSLog(@"%zd",index);
@@ -73,7 +86,7 @@
 {
     NSArray *titles = @[@"发起群聊",@"添加朋友",@"扫一扫",@"收付款"];
     NSArray *images = @[@"scan",@"scan",@"scan",@"scan"];
-    MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4) WithTitles:titles WithImageNames:images WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight WithTriangleOffsetLeft:80];
+    MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4) WithTitles:titles WithImageNames:images WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight WithTriangleOffsetLeft:80 triangleColor:nil];
     menuView.didSelectBlock = ^(NSInteger index) {
         NSLog(@"%zd",index);
     };
@@ -97,7 +110,7 @@
 {
     NSArray *titles = @[@"发起群聊",@"添加朋友",@"扫一扫",@"收付款"];
 
-    MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4) WithTitles:titles WithImageNames:nil WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight WithTriangleOffsetLeft:80];
+    MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4) WithTitles:titles WithImageNames:nil WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight WithTriangleOffsetLeft:80 triangleColor:nil];
     [menuView setCoverViewBackgroundColor:[UIColor lightGrayColor]];
     menuView.didSelectBlock = ^(NSInteger index) {
         NSLog(@"%zd",index);
