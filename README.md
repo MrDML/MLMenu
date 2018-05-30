@@ -20,12 +20,12 @@ MLMenu is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'MLMenu' / pod 'MLMenu', '~> 0.1.7'
+pod 'MLMenu' / pod 'MLMenu', '~> 1.0.0'
 ```
 ## Use
 // 导入头文件
 ```````````
-#import <MLMenu/MLMenu.h>
+#import <MLMenu/MLMenuView.h>
 ```````````
 ```````````
 - (void)testCode_One
