@@ -21,12 +21,12 @@
 
 static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
 
-@interface MLMenuView ()<UIGestureRecognizerDelegate>{
+@interface MLMenuView ()<UIGestureRecognizerDelegate,MLMenuItemsViewDelegate>{
     CGRect _frame;
     CGFloat _triangleOffsetLeft;
     CGFloat _menuViewOffsetTop;
     BOOL _isHasTriangle;
-    MLEnterAnimationStyle _animationStyle;
+    MLAnimationStyle _animationStyle;
     UIColor *_triangleColor;
 }
 @property (nonatomic, strong) UIView *coverView;
@@ -152,32 +152,28 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
     frameItemsView.size.width = self.contentView.frame.size.width;
     frameItemsView.size.height = _isHasTriangle? self.contentView.frame.size.height - 10 : self.contentView.frame.size.height;
     self.itemsView.frame = frameItemsView;
-   __weak typeof(self)WeakSelf = self;
-    self.itemsView.menuDidSelectBlock = ^(NSInteger index) {
-        if ([WeakSelf.delegate respondsToSelector:@selector(menuView:DidselectItemIndex:)]) {
-            [WeakSelf.delegate menuView:WeakSelf DidselectItemIndex:index];
-        }
-        if (WeakSelf.didSelectBlock) {
-            WeakSelf.didSelectBlock(index);
-        }
-        
-    };
-   
-    
-   
+  
 }
 
 
+#pragma mark MLMenuItemsViewDelegate
+- (void)menuItemsView:(MLMenuItemsView *)itemView didSelectItemAtIndex:(NSInteger)index{
+    if ([self.delegate respondsToSelector:@selector(menuView:didselectItemIndex:)]) {
+        [self.delegate menuView:self didselectItemIndex:index];
+    }
+    if (self.didSelectBlock) {
+        self.didSelectBlock(index);
+    }
+    [self hidMenuExitAnimation:_animationStyle];
+}
 
 
-
-
-- (void)showMenuEnterAnimation:(MLEnterAnimationStyle)animationStyle
+- (void)showMenuEnterAnimation:(MLAnimationStyle)animationStyle
 {
     
    _animationStyle = animationStyle;
      [self setSubViews];
-    if (animationStyle == MLEnterAnimationStyleRight) {
+    if (animationStyle == MLAnimationStyleRight) {
         self.contentView.layer.position = CGPointMake(_frame.origin.x + _frame.size.width, 0);
         self.contentView.layer.anchorPoint = CGPointMake(1, 0);
         self.contentView.clipsToBounds = YES;
@@ -187,7 +183,7 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
             self.contentView.alpha = 1;
             self.contentView.transform = CGAffineTransformMakeScale(1, 1);
         }];
-    }else if (animationStyle == MLEnterAnimationStyleTop){
+    }else if (animationStyle == MLAnimationStyleTop){
         self.contentView.layer.position = CGPointMake(_frame.origin.x + _frame.size.width * 0.5, _menuViewOffsetTop);
         self.contentView.layer.anchorPoint = CGPointMake(0.5, 0);
         self.contentView.clipsToBounds = YES;
@@ -210,10 +206,10 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
 }
 
 
-- (void)hidMenuExitAnimation:(MLEnterAnimationStyle)animationStyle
+- (void)hidMenuExitAnimation:(MLAnimationStyle)animationStyle
 {
     
-    if (_animationStyle == MLEnterAnimationStyleRight) {
+    if (_animationStyle == MLAnimationStyleRight) {
         self.contentView.alpha = 1;
         [UIView animateWithDuration:0.2 animations:^{
             self.contentView.alpha = 0;
@@ -221,7 +217,7 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
         } completion:^(BOOL finished) {
             [self removeFromSuperview];
         }];
-    }else if (_animationStyle == MLEnterAnimationStyleTop){
+    }else if (_animationStyle == MLAnimationStyleTop){
         self.contentView.transform = CGAffineTransformMakeScale(1, 1);
         [UIView animateWithDuration:0.2 animations:^{
             self.contentView.transform = CGAffineTransformMakeScale(1, 0.001);
@@ -288,6 +284,7 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
     if (!_itemsView) {
         _itemsView = [[MLMenuItemsView alloc] initWiithMenuItemTitles:self.titles ImageNames:self.imageNames];
         _itemsView.backgroundColor =  [UIColor colorWithRed:73/255.0 green:72/255.0 blue:75/255.0 alpha:1];
+        _itemsView.delegate = self;
     }
     return _itemsView;
 }

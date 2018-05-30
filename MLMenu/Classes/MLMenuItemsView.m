@@ -126,10 +126,10 @@
     self.backgroundColor = _contentColor;
 }
 
-- (void)menuItemView:(MLMenuItemView *)itemView DidSelectItemAtIndex:(NSInteger)index{
+- (void)menuItemView:(MLMenuItemView *)itemView didSelectItemAtIndex:(NSInteger)index{
     
-    if ([_delegate respondsToSelector:@selector(menuItemsView:DidSelectItemAtIndex:)]) {
-        [_delegate menuItemsView:self DidSelectItemAtIndex:index];
+    if ([_delegate respondsToSelector:@selector(menuItemsView:didSelectItemAtIndex:)]) {
+        [_delegate menuItemsView:self didSelectItemAtIndex:index];
     }
     if (_menuDidSelectBlock) {
         _menuDidSelectBlock(index);
@@ -190,8 +190,8 @@
 }
 
 - (void)itemAction:(MLButton *)sender{
-    if ([_delegate respondsToSelector:@selector(menuItemView:DidSelectItemAtIndex:)]) {
-        [_delegate menuItemView:self DidSelectItemAtIndex:sender.tag];
+    if ([_delegate respondsToSelector:@selector(menuItemView:didSelectItemAtIndex:)]) {
+        [_delegate menuItemView:self didSelectItemAtIndex:sender.tag];
     }
 }
 
@@ -278,7 +278,7 @@
 - (void)drawRectLine:(UIColor *)color{
     CGContextRef contextRef =  UIGraphicsGetCurrentContext();
     CGMutablePathRef path = CGPathCreateMutable();
-    CGContextSetLineWidth(contextRef, 0.5);
+    CGContextSetLineWidth(contextRef, 1);
     [self.lineCustomeColor setStroke];
     CGPathMoveToPoint(path, NULL, 0, 1);
     CGPathAddLineToPoint(path, NULL, self.bounds.size.width, 1);

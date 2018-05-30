@@ -12,13 +12,13 @@
 @class MLMenuView;
 
 @protocol MLMenuViewDelegate <NSObject>
-- (void)menuView:(MLMenuView *)menu DidselectItemIndex:(NSInteger)index;
+- (void)menuView:(MLMenuView *)menu didselectItemIndex:(NSInteger)index;
 @end
 
-typedef NS_ENUM(NSInteger,MLEnterAnimationStyle) {
-    MLEnterAnimationStyleNone,
-    MLEnterAnimationStyleRight,
-    MLEnterAnimationStyleTop,
+typedef NS_ENUM(NSInteger,MLAnimationStyle) {
+    MLAnimationStyleNone,
+    MLAnimationStyleRight,
+    MLAnimationStyleTop,
 };
 
 typedef void(^menuDidSelectBlock)(NSInteger index);
@@ -120,11 +120,11 @@ typedef void(^menuDidSelectBlock)(NSInteger index);
 /**
  呈现菜单
  */
-- (void)showMenuEnterAnimation:(MLEnterAnimationStyle)animationStyle;
+- (void)showMenuEnterAnimation:(MLAnimationStyle)animationStyle;
 
 /**
  隐藏菜单
  */
-- (void)hidMenuExitAnimation:(MLEnterAnimationStyle)animationStyle;
+- (void)hidMenuExitAnimation:(MLAnimationStyle)animationStyle;
 
 @end

@@ -62,7 +62,7 @@
     menuView.didSelectBlock = ^(NSInteger index) {
         NSLog(@"%zd",index);
     };
-    [menuView showMenuEnterAnimation:MLEnterAnimationStyleNone];
+    [menuView showMenuEnterAnimation:MLAnimationStyleNone];
     
 }
 
@@ -75,7 +75,7 @@
     menuView.didSelectBlock = ^(NSInteger index) {
         NSLog(@"%zd",index);
     };
-    [menuView showMenuEnterAnimation:MLEnterAnimationStyleNone];
+    [menuView showMenuEnterAnimation:MLAnimationStyleNone];
 }
 
 
@@ -87,7 +87,7 @@
     menuView.didSelectBlock = ^(NSInteger index) {
         NSLog(@"%zd",index);
     };
-    [menuView showMenuEnterAnimation:MLEnterAnimationStyleRight];
+    [menuView showMenuEnterAnimation:MLAnimationStyleTop];
 }
 
 - (void)testCode_Four
@@ -100,7 +100,7 @@
     menuView.didSelectBlock = ^(NSInteger index) {
         NSLog(@"%zd",index);
     };
-    [menuView showMenuEnterAnimation:MLEnterAnimationStyleTop];
+    [menuView showMenuEnterAnimation:MLAnimationStyleRight];
 }
 
 - (void)testCode_Five
@@ -115,7 +115,7 @@
     menuView.didSelectBlock = ^(NSInteger index) {
         NSLog(@"%zd",index);
     };
-    [menuView showMenuEnterAnimation:MLEnterAnimationStyleNone];
+    [menuView showMenuEnterAnimation:MLAnimationStyleTop];
 }
 - (void)testCode_Six
 {

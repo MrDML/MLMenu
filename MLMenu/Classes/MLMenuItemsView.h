@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 @class MLMenuItemsView;
 @protocol MLMenuItemsViewDelegate <NSObject>
-- (void)menuItemsView:(MLMenuItemsView *)itemView DidSelectItemAtIndex:(NSInteger)index;
+- (void)menuItemsView:(MLMenuItemsView *)itemView didSelectItemAtIndex:(NSInteger)index;
 @end
 @interface MLMenuItemsView : UIView
 @property (nonatomic, copy) void (^menuDidSelectBlock)(NSInteger index);
@@ -27,7 +27,7 @@
 
 @class MLMenuItemView;
 @protocol MLMenuItemViewDelegate <NSObject>
-- (void)menuItemView:(MLMenuItemView *)itemView DidSelectItemAtIndex:(NSInteger)index;
+- (void)menuItemView:(MLMenuItemView *)itemView didSelectItemAtIndex:(NSInteger)index;
 @end
 
 @interface MLMenuItemView : UIView
