@@ -8,6 +8,7 @@
 
 #import "MLMenuView.h"
 #import "MLMenuItemsView.h"
+#import "MLMenuData.h"
 #define  MLClolor(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 #define  k_ScreenHeight   [UIScreen mainScreen].bounds.size.height
 #define  k_ScreenWidth   [UIScreen mainScreen].bounds.size.width
@@ -32,6 +33,7 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
 @property (nonatomic, strong) UIView *coverView;
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) MLMenuItemsView *itemsView;
+@property (nonatomic, strong) MLMenuData *menuData;
 @end
 
 @implementation MLMenuView
@@ -50,6 +52,8 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
         _imageNames = imageNames;
         _triangleColor = (triangleColor != nil)?triangleColor :MLClolor(73, 72, 75, 1);
         self.backgroundColor = [UIColor clearColor];
+         _menuData = [[MLMenuData alloc] init];
+        [_menuData defaultVaule];
 
     }
     return self;
@@ -66,7 +70,7 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
 
 - (void)setMenuViewBackgroundColor:(UIColor *)backgroundColor
 {
-    self.itemsView.contentColor = backgroundColor;
+    self.menuData.contentColor = backgroundColor;
 }
 
 - (void)setCoverViewBackgroundColor:(UIColor *)backgroundColor
@@ -78,43 +82,43 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
 - (void)setTitleColor:(UIColor *)titleColor
 {
     _titleColor = titleColor;
-    self.itemsView.titleColor = _titleColor;
+    self.menuData.titleColor = _titleColor;
 }
 
 - (void)setTitles:(NSArray *)titles
 {
     _titles = titles;
-    self.itemsView.titles = _titles;
+    self.menuData.titles = _titles;
 }
 
 - (void)setImageNames:(NSArray *)imageNames
 {
     _imageNames = imageNames;
-    self.itemsView.imageNames = _imageNames;
+    self.menuData.imageNames = _imageNames;
 }
 
-- (void)setTitleFont:(UIFont *)font
+- (void)setFont:(UIFont *)font
 {
     _font = font;
-    self.itemsView.font = _font;
+    self.menuData.font = _font;
 }
 
 - (void)setSeparatorColor:(UIColor *)separatorColor
 {
     _separatorColor = separatorColor;
-    self.itemsView.separatorColor = _separatorColor;
+    self.menuData.separatorColor = _separatorColor;
 }
 
 
 - (void)setSeparatorOffSet:(CGFloat)separatorOffSet
 {
     _separatorOffSet = separatorOffSet;
-    self.itemsView.separatorOffset = _separatorOffSet;
+    self.menuData.separatorOffSet = _separatorOffSet;
 }
 
 - (void)setSeparatorAlpha:(CGFloat)separatorAlpha{
     _separatorAlpha = separatorAlpha;
-    self.itemsView.separatorAlpha = _separatorAlpha;
+    self.menuData.separatorAlpha = _separatorAlpha;
 }
 
 
@@ -127,6 +131,8 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
     [self.coverView addSubview:self.contentView];
    
     [self.contentView addSubview:self.itemsView];
+    [self.itemsView updateMenuItemsView:self.menuData];
+  
     _isHasTriangle ? [self drawRectCoverViewTriangleOffset:_triangleOffsetLeft] : nil;
     
 }
@@ -153,6 +159,16 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
     frameItemsView.size.height = _isHasTriangle? self.contentView.frame.size.height - 10 : self.contentView.frame.size.height;
     self.itemsView.frame = frameItemsView;
   
+}
+
+- (void)calculateMenuWidth{
+    
+    CGFloat titleWidth = 0;
+    for (NSString *title in self.titles) {
+        
+    }
+    
+    
 }
 
 
@@ -282,7 +298,7 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
 - (MLMenuItemsView *)itemsView
 {
     if (!_itemsView) {
-        _itemsView = [[MLMenuItemsView alloc] initWiithMenuItemTitles:self.titles ImageNames:self.imageNames];
+        _itemsView = [[MLMenuItemsView alloc] initWiithMenuItemTitles:self.titles ImageNames:self.imageNames withMenuData:self.menuData];
         _itemsView.backgroundColor =  [UIColor colorWithRed:73/255.0 green:72/255.0 blue:75/255.0 alpha:1];
         _itemsView.delegate = self;
     }

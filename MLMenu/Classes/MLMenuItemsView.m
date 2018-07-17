@@ -6,54 +6,75 @@
 //
 
 #import "MLMenuItemsView.h"
+#import "MLMenuData.h"
 
-@interface MLMenuItemsView ()<MLMenuItemViewDelegate>
-
+@interface MLMenuItemsView ()<MLMenuItemViewDelegate>{
+   
+}
+@property (nonatomic, strong) MLMenuData *menuData;
 @end
 
 @implementation MLMenuItemsView 
 
-- (void)loadMenuItemTitles:(nonnull NSArray *)titles ImageNames:(NSArray *)imageNames{
+- (void)loadMenuItemTitles:(nonnull NSArray *)titles ImageNames:(NSArray *)imageNames withMenuData:(MLMenuData *)menuData{
     self.titles = titles;
     self.imageNames = imageNames;
-    if (titles.count <= 0) return;
-    for (UIView *view in self.subviews) {
-        [view removeFromSuperview];
-    }
-    for (int i = 0; i < titles.count; i ++) {
-
-        MLMenuItemView *itemView = [[MLMenuItemView alloc] initWithTitle:titles[i] ImageName:imageNames[i] WithAtIndex:i];
-        itemView.title = titles[i];
-        itemView.imageName = imageNames[i];
-        itemView.delegate = self;
-        [self addSubview:itemView];
-        if (i == titles.count - 1) {
-            itemView.isHiddenLin = YES;
-        }
-
-    }
+    [self loadItemView:menuData];
+   
 }
 
 
-- (instancetype)initWiithMenuItemTitles:(nonnull NSArray *)titles ImageNames:(NSArray *)imageNames
+
+
+- (instancetype)initWiithMenuItemTitles:(nonnull NSArray *)titles ImageNames:(NSArray *)imageNames withMenuData:(MLMenuData *)menuData
 {
     self = [super init];
     if (self) {
-         [self loadMenuItemTitles:titles ImageNames:imageNames];
+         [self loadMenuItemTitles:titles ImageNames:imageNames withMenuData:menuData];
     }
     return self;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame WiithMenuItemTitles:(nonnull NSArray *)titles ImageNames:(NSArray *)imageNames{
+- (instancetype)initWithFrame:(CGRect)frame WiithMenuItemTitles:(nonnull NSArray *)titles ImageNames:(NSArray *)imageNames withMenuData:(MLMenuData *)menuData{
     self = [super initWithFrame:frame];
     if (self) {
-        [self loadMenuItemTitles:titles ImageNames:imageNames];
+        [self loadMenuItemTitles:titles ImageNames:imageNames withMenuData:menuData];
     }
     return self;
 }
+
+- (void)loadItemView:(MLMenuData *)menuData{
+    if (self.titles.count <= 0) return;
+    for (UIView *view in self.subviews) {
+        [view removeFromSuperview];
+    }
+    for (int i = 0; i < self.titles.count; i ++) {
+        
+        MLMenuItemView *itemView = [[MLMenuItemView alloc] initWithTitle:self.titles[i] ImageName:self.imageNames[i] WithAtIndex:i withMenuData:menuData];
+
+        itemView.delegate = self;
+        
+        [self addSubview:itemView];
+        if (i == self.titles.count - 1) {
+            itemView.isHiddenLin = YES;
+        }
+        
+    }
+}
+
+- (void)updateMenuItemsView:(MLMenuData *)menuData{
+    _menuData = menuData;
+    [self loadItemView:menuData];
+    [self setNeedsDisplay];
+    [self setNeedsLayout];
+    self.backgroundColor = _menuData.contentColor;
+    
+}
+
 
 - (void)layoutSubviews{
     [super layoutSubviews];
+   
     for (int i = 0; i < self.subviews.count; i ++) {
         MLMenuItemView *itemView = self.subviews[i];
         CGRect frame = CGRectZero;
@@ -64,67 +85,6 @@
     }
 }
 
-- (void)setTitles:(NSArray *)titles{
-    _titles = titles;
-    for (int i = 0; i < self.subviews.count; i ++) {
-        MLMenuItemView *itemView = self.subviews[i];
-        itemView.title = _titles[i];
-    }
-}
-
-- (void)setImageNames:(NSArray *)imageNames{
-    _imageNames = imageNames;
-    for (int i = 0; i < self.subviews.count; i ++) {
-        MLMenuItemView *itemView = self.subviews[i];
-        itemView.imageName = _imageNames[i];
-    }
-}
-
-
-- (void)setTitleColor:(UIColor *)titleColor{
-    _titleColor = titleColor;
-    for (int i = 0; i < self.subviews.count; i ++) {
-        MLMenuItemView *itemView = self.subviews[i];
-        itemView.titleColor = _titleColor;
-    }
-}
-
-- (void)setFont:(UIFont *)font{
-    _font = font;
-    for (int i = 0; i < self.subviews.count; i ++) {
-        MLMenuItemView *itemView = self.subviews[i];
-        itemView.font = _font;
-    }
-}
-
-- (void)setSeparatorColor:(UIColor *)separatorColor{
-    _separatorColor = separatorColor;
-    for (int i = 0; i < self.subviews.count; i ++) {
-        MLMenuItemView *itemView = self.subviews[i];
-        itemView.separatorColor = _separatorColor;
-    }
-}
-
-- (void)setSeparatorOffset:(CGFloat)separatorOffset{
-    _separatorOffset = separatorOffset;
-    for (int i = 0; i < self.subviews.count; i ++) {
-        MLMenuItemView *itemView = self.subviews[i];
-        itemView.separatorOffset = _separatorOffset;
-    }
-}
-
-- (void)setSeparatorAlpha:(CGFloat)separatorAlpha{
-    _separatorAlpha = separatorAlpha;
-    for (int i = 0; i < self.subviews.count; i ++) {
-        MLMenuItemView *itemView = self.subviews[i];
-        itemView.separatorAlpha = _separatorAlpha;
-    }
-}
-
-- (void)setContentColor:(UIColor *)contentColor{
-    _contentColor = contentColor;
-    self.backgroundColor = _contentColor;
-}
 
 - (void)menuItemView:(MLMenuItemView *)itemView didSelectItemAtIndex:(NSInteger)index{
     
@@ -147,28 +107,38 @@
     MLButton       *_button;
     NSInteger      _index;
 }
+@property (nonatomic, strong)MLMenuData *menuData;
 @end
 
 @implementation MLMenuItemView
 
 
-- (instancetype)initWithTitle:(nonnull NSString *)title ImageName:(nullable NSString *)imageName WithAtIndex:(NSInteger)index {
+- (instancetype)initWithTitle:(nonnull NSString *)title ImageName:(nullable NSString *)imageName WithAtIndex:(NSInteger)index withMenuData:(MLMenuData *)menuData {
     self = [super init];
     if (self) {
         self.title = title;
         self.imageName = imageName;
         _index = index;
-        [self initialize:index];
+        self.menuData = menuData;
+        
     }
     return self;
+}
+
+
+- (void)setMenuData:(MLMenuData *)menuData{
+    _menuData = menuData;
+    [self initialize:_index];
+    _viewLine.lineCustomeColor = menuData.separatorColor;
+    _viewLine.alpha = menuData.separatorAlpha;
 }
 
 - (void)initialize:(NSInteger)index{
     
     MLButton *button = [MLButton buttonWithType:UIButtonTypeCustom];
     _button = button;
-    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    button.titleLabel.font = [UIFont systemFontOfSize:14];
+    [button setTitleColor:self.menuData.titleColor forState:UIControlStateNormal];
+    button.titleLabel.font = self.menuData.font;
     [button setTitle:self.title forState:UIControlStateNormal];
     button.tag = index;
     [button addTarget:self action:@selector(itemAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -201,49 +171,12 @@
 }
 
 
-- (void)setTitle:(NSString *)title{
-    _title = title;
-    [_button setTitle:_title forState:UIControlStateNormal];
-}
 
-- (void)setImageName:(NSString *)imageName{
-    _imageName = imageName;
-    if (_imageName) {
-        [_button setImage:[UIImage imageNamed:_imageName] forState:UIControlStateNormal];
-    }
-    
-}
-
-- (void)setTitleColor:(UIColor *)titleColor{
-    _titleColor = titleColor;
-    [_button setTitleColor:_titleColor forState:UIControlStateNormal];
-}
-
-- (void)setFont:(UIFont *)font{
-    _font = font;
-    _button.titleLabel.font = _font;
-}
-
-- (void)setSeparatorColor:(UIColor *)separatorColor{
-    _separatorColor = separatorColor;
-    _viewLine.lineCustomeColor = _separatorColor;
-    [_viewLine setNeedsLayout];
-}
-
-- (void)setSeparatorOffset:(CGFloat)separatorOffset{
-    _separatorOffset = separatorOffset;
-   _viewLine.frame = CGRectMake(_separatorOffset, CGRectGetMaxY(_button.frame), self.bounds.size.width - (_separatorOffset * 2), 2);
-}
-
-- (void)setSeparatorAlpha:(CGFloat)separatorAlpha{
-    _separatorAlpha = separatorAlpha;
-    _viewLine.alpha = _separatorAlpha;
-}
 
 - (void)layoutSubviews{
     [super layoutSubviews];
     _button.frame = CGRectMake(0, 0, self.bounds.size.width,self.bounds.size.height - 2);
-    _viewLine.frame = CGRectMake(_separatorOffset, CGRectGetMaxY(_button.frame), self.bounds.size.width - (_separatorOffset * 2), 2);
+    _viewLine.frame = CGRectMake(self.menuData.separatorOffSet, CGRectGetMaxY(_button.frame), self.bounds.size.width - (self.menuData.separatorOffSet * 2), 2);
 }
 
 

@@ -87,9 +87,6 @@ typedef void(^menuDidSelectBlock)(NSInteger index);
 
 @property (nonatomic, strong) UIFont *font;
 
-
-
-
 /**
  标题数组
  */
@@ -112,10 +109,6 @@ typedef void(^menuDidSelectBlock)(NSInteger index);
  设置线条的透明度
  */
 @property (nonatomic, assign) CGFloat separatorAlpha;
-
-
-
-
 
 /**
  呈现菜单

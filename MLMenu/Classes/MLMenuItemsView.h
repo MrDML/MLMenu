@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class MLMenuData;
 @class MLMenuItemsView;
 @protocol MLMenuItemsViewDelegate <NSObject>
 - (void)menuItemsView:(MLMenuItemsView *)itemView didSelectItemAtIndex:(NSInteger)index;
@@ -21,8 +22,10 @@
 @property (nonatomic, strong, nullable) UIColor *separatorColor;
 @property (nonatomic, assign) CGFloat separatorOffset;
 @property (nonatomic, assign) CGFloat separatorAlpha;
-- (instancetype)initWiithMenuItemTitles:(nonnull NSArray *)titles ImageNames:(NSArray *)imageNames;
-- (instancetype)initWithFrame:(CGRect)frame WiithMenuItemTitles:(nonnull NSArray *)titles ImageNames:(NSArray *)imageNames;
+- (void)loadMenuItemTitles:(nonnull NSArray *)titles ImageNames:(NSArray *)imageNames withMenuData:(MLMenuData *)menuData;
+- (instancetype)initWiithMenuItemTitles:(nonnull NSArray *)titles ImageNames:(NSArray *)imageNames withMenuData:(MLMenuData *)menuData;
+- (instancetype)initWithFrame:(CGRect)frame WiithMenuItemTitles:(nonnull NSArray *)titles ImageNames:(NSArray *)imageNames withMenuData:(MLMenuData *)menuData;
+- (void)updateMenuItemsView:(MLMenuData *)menuData;
 @end
 
 @class MLMenuItemView;
@@ -30,6 +33,7 @@
 - (void)menuItemView:(MLMenuItemView *)itemView didSelectItemAtIndex:(NSInteger)index;
 @end
 
+@class MLMenuData;
 @interface MLMenuItemView : UIView
 @property (nonatomic, copy, nullable) NSString *title;
 @property (nonatomic, copy, nullable) NSString *imageName;
@@ -40,7 +44,8 @@
 @property (nonatomic, assign) CGFloat separatorAlpha;
 @property (nonatomic, assign) BOOL isHiddenLin;
 @property (nonatomic, weak) id <MLMenuItemViewDelegate>delegate;
-- (instancetype)initWithTitle:(nonnull NSString *)title ImageName:(nullable NSString *)imageName WithAtIndex:(NSInteger)index;
+//- (instancetype)initWithTitle:(nonnull NSString *)title ImageName:(nullable NSString *)imageName WithAtIndex:(NSInteger)index;
+- (instancetype)initWithTitle:(nonnull NSString *)title ImageName:(nullable NSString *)imageName WithAtIndex:(NSInteger)index withMenuData:(MLMenuData *)menuData;
 
 @end
 

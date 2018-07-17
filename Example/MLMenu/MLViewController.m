@@ -15,7 +15,7 @@
 #import "MLViewController.h"
 #import <MLMenu/MLMenuView.h>
 @interface MLViewController ()
-
+@property (nonatomic, strong)MLMenuView *menuView;
 @end
 
 @implementation MLViewController
@@ -47,6 +47,11 @@
     
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    NSArray *titles = @[@"发起群聊"];
+    self.menuView.titles = titles;
+    [self.menuView showMenuEnterAnimation:MLAnimationStyleNone];
+}
 
 
 - (void)testCode_One
@@ -55,15 +60,15 @@
    
     MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4) WithTitles:titles WithImageNames:nil WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight WithTriangleOffsetLeft:80 triangleColor:[UIColor whiteColor]];
     menuView.separatorOffSet = 10;
-    menuView.separatorColor = MLClolor(51, 51, 51, 1);
+    menuView.separatorColor = MLClolor(51, 51, 51, 0.5);
     [menuView setMenuViewBackgroundColor:[UIColor whiteColor]];
     menuView.titleColor = [UIColor blackColor];
     [menuView setCoverViewBackgroundColor:MLClolor(51, 51, 51, 0.5)];
     menuView.didSelectBlock = ^(NSInteger index) {
         NSLog(@"%zd",index);
     };
-    [menuView showMenuEnterAnimation:MLAnimationStyleNone];
     
+    self.menuView = menuView;
 }
 
 - (void)testCode_Two
@@ -72,6 +77,10 @@
     NSArray *images = @[@"scan",@"scan",@"scan",@"scan"];
 
     MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4) WithTitles:titles WithImageNames:images WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight WithTriangleOffsetLeft:80 triangleColor:nil];
+    menuView.separatorOffSet = 10;
+    menuView.separatorColor = MLClolor(51, 51, 51, 0.5);
+    [menuView setMenuViewBackgroundColor:[UIColor grayColor]];
+    menuView.titleColor = [UIColor blackColor];
     menuView.didSelectBlock = ^(NSInteger index) {
         NSLog(@"%zd",index);
     };
