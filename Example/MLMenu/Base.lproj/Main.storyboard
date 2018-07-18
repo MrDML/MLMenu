@@ -20,7 +20,20 @@
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zG-me-nFW">
+                                <rect key="frame" x="154.5" y="318" width="66" height="30"/>
+                                <state key="normal" title="FixButton"/>
+                                <connections>
+                                    <action selector="fixTitles:" destination="whP-gf-Uak" eventType="touchUpInside" id="jol-jO-zwE"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5zG-me-nFW" firstAttribute="centerY" secondItem="TpU-gO-2f1" secondAttribute="centerY" id="Pbj-mS-egU"/>
+                            <constraint firstItem="5zG-me-nFW" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="aH9-9B-Tmo"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="MLMenu" id="nn1-xo-pow">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="gXd-Gd-Gop">

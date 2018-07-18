@@ -39,8 +39,7 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
 @implementation MLMenuView
 
 
-- (instancetype)initWithFrame:(CGRect)frame WithTitles:(nonnull NSArray *)titles WithImageNames:(nullable NSArray *)imageNames WithMenuViewOffsetTop:(CGFloat)top WithTriangleOffsetLeft:(CGFloat)left triangleColor:(nullable UIColor *)triangleColor
-{
+- (instancetype)initWithFrame:(CGRect)frame WithTitles:(nonnull NSArray *)titles WithImageNames:(nullable NSArray *)imageNames WithMenuViewOffsetTop:(CGFloat)top WithTriangleOffsetLeft:(CGFloat)left triangleColor:(nullable UIColor *)triangleColor{
     self = [super initWithFrame:CGRectMake(0, 0, k_ScreenWidth, k_ScreenHeight)];
     if (self) {
         _frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, titles.count * 44);
@@ -53,14 +52,15 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
         _triangleColor = (triangleColor != nil)?triangleColor :MLClolor(73, 72, 75, 1);
         self.backgroundColor = [UIColor clearColor];
          _menuData = [[MLMenuData alloc] init];
+        _menuData.titles = titles;
+        _menuData.imageNames = imageNames;
         [_menuData defaultVaule];
 
     }
     return self;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame WithTitles:(nonnull NSArray *)titles WithImageNames:(nullable NSArray *)imageNames WithMenuViewOffsetTop:(CGFloat)top
-{
+- (instancetype)initWithFrame:(CGRect)frame WithTitles:(nonnull NSArray *)titles WithImageNames:(nullable NSArray *)imageNames WithMenuViewOffsetTop:(CGFloat)top{
 
     self = [self initWithFrame:frame WithTitles:titles WithImageNames:imageNames WithMenuViewOffsetTop:top WithTriangleOffsetLeft:0 triangleColor:nil];
     _isHasTriangle = NO;
@@ -68,50 +68,42 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
 }
 
 
-- (void)setMenuViewBackgroundColor:(UIColor *)backgroundColor
-{
+- (void)setMenuViewBackgroundColor:(UIColor *)backgroundColor{
     self.menuData.contentColor = backgroundColor;
 }
 
-- (void)setCoverViewBackgroundColor:(UIColor *)backgroundColor
-{
+- (void)setCoverViewBackgroundColor:(UIColor *)backgroundColor{
   self.coverView.backgroundColor =  backgroundColor != nil ?  backgroundColor : [UIColor clearColor];
 }
 
 
-- (void)setTitleColor:(UIColor *)titleColor
-{
+- (void)setTitleColor:(UIColor *)titleColor{
     _titleColor = titleColor;
     self.menuData.titleColor = _titleColor;
 }
 
-- (void)setTitles:(NSArray *)titles
-{
+- (void)setTitles:(NSArray *)titles{
     _titles = titles;
     self.menuData.titles = _titles;
 }
 
-- (void)setImageNames:(NSArray *)imageNames
-{
+- (void)setImageNames:(NSArray *)imageNames{
     _imageNames = imageNames;
     self.menuData.imageNames = _imageNames;
 }
 
-- (void)setFont:(UIFont *)font
-{
+- (void)setFont:(UIFont *)font{
     _font = font;
     self.menuData.font = _font;
 }
 
-- (void)setSeparatorColor:(UIColor *)separatorColor
-{
+- (void)setSeparatorColor:(UIColor *)separatorColor{
     _separatorColor = separatorColor;
     self.menuData.separatorColor = _separatorColor;
 }
 
 
-- (void)setSeparatorOffSet:(CGFloat)separatorOffSet
-{
+- (void)setSeparatorOffSet:(CGFloat)separatorOffSet{
     _separatorOffSet = separatorOffSet;
     self.menuData.separatorOffSet = _separatorOffSet;
 }
@@ -122,9 +114,13 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
 }
 
 
+- (void)setContentLeftOffset:(CGFloat)contentLeftOffset{
+    _contentLeftOffset = contentLeftOffset;
+    self.menuData.contentLeftOffset = contentLeftOffset;
+}
 
-- (void)setSubViews
-{
+
+- (void)setSubViews{
     UIWindow *window = [UIApplication sharedApplication].delegate.window;
     [window addSubview:self];
     [self addSubview:self.coverView];
@@ -137,17 +133,16 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
     
 }
 
-- (void)layoutSubviews
-{
+- (void)layoutSubviews{
     [super layoutSubviews];
     
     CGFloat itemHeight = 45;
     NSInteger count = self.titles.count;
     
     CGRect frame = CGRectZero;
-    frame.origin.x = _frame.origin.x;
+    frame.origin.x = _frame.origin.x - ([self calculateMenuWidth] - _frame.size.width);
     frame.origin.y = 0;
-    frame.size.width = _frame.size.width;
+    frame.size.width = [self calculateMenuWidth];
     frame.size.height = _isHasTriangle? (itemHeight * count) + 10 : itemHeight * count;
     self.contentView.frame = frame;
     
@@ -161,12 +156,24 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
   
 }
 
-- (void)calculateMenuWidth{
+- (CGFloat)calculateMenuWidth{
     
     CGFloat titleWidth = 0;
     for (NSString *title in self.titles) {
-        
+      CGSize size  = [title boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.menuData.font} context:nil].size;
+        titleWidth = MAX(_frame.size.width, size.width);
     }
+    
+    CGFloat imageWidth = 0;
+    if (self.imageNames.count > 0) {
+        for (NSString *imageName in self.imageNames) {
+            UIImage *image = [UIImage imageNamed:imageName];
+            imageWidth = MAX(imageWidth, image.size.width);
+        }
+    }
+    
+    return titleWidth + imageWidth;
+    
     
     
 }
@@ -298,7 +305,7 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
 - (MLMenuItemsView *)itemsView
 {
     if (!_itemsView) {
-        _itemsView = [[MLMenuItemsView alloc] initWiithMenuItemTitles:self.titles ImageNames:self.imageNames withMenuData:self.menuData];
+        _itemsView = [[MLMenuItemsView alloc] initWiithMenuItemTitles:self.menuData.titles ImageNames:self.menuData.imageNames withMenuData:self.menuData];
         _itemsView.backgroundColor =  [UIColor colorWithRed:73/255.0 green:72/255.0 blue:75/255.0 alpha:1];
         _itemsView.delegate = self;
     }
@@ -310,7 +317,7 @@ static  NSString * const IDETIFIRE = @"MLMENUCELLIDETIFIRE";
 {
 
     if (offset < 6) offset = 6;
-    if (offset > _frame.size.width - 6) offset = _frame.size.width - 6;
+    if (offset > [self calculateMenuWidth] - 6) offset = [self calculateMenuWidth] - 6;
 
     UIBezierPath *path = [UIBezierPath bezierPath];
     [path moveToPoint:CGPointMake(offset, 2)];

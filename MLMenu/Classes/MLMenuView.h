@@ -111,6 +111,10 @@ typedef void(^menuDidSelectBlock)(NSInteger index);
 @property (nonatomic, assign) CGFloat separatorAlpha;
 
 /**
+ 预留参数，微调视图位置
+ */
+@property (nonatomic, assign) CGFloat contentLeftOffset;
+/**
  呈现菜单
  */
 - (void)showMenuEnterAnimation:(MLAnimationStyle)animationStyle;

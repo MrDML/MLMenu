@@ -50,8 +50,7 @@
 @end
 
 @interface MLButton: UIButton
-
-
+@property (nonatomic,strong)MLMenuData *menuData;
 @end
 
 @interface MLViewLin:UIView

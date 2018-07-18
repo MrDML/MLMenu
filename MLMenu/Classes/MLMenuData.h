@@ -49,4 +49,9 @@
  */
 @property (nonatomic, strong) UIColor *contentColor;
 
+/**
+ 预留参数，微调视图位置
+ */
+@property (nonatomic, assign) CGFloat contentLeftOffset;
+
 @end

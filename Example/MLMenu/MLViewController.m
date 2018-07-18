@@ -48,21 +48,28 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    NSArray *titles = @[@"发起群聊"];
-    self.menuView.titles = titles;
+  
     [self.menuView showMenuEnterAnimation:MLAnimationStyleNone];
 }
 
+- (IBAction)fixTitles:(id)sender {
+    NSArray *titles = @[@"发起群聊"];
+    self.menuView.titles = titles;
+}
 
 - (void)testCode_One
 {
     NSArray *titles = @[@"发起群聊",@"添加朋友",@"扫一扫",@"收付款"];
    
     MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4) WithTitles:titles WithImageNames:nil WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight WithTriangleOffsetLeft:80 triangleColor:[UIColor whiteColor]];
+    
+//  MLMenuView *menuView =   [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4) WithTitles:titles WithImageNames:nil WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight];
+    
     menuView.separatorOffSet = 10;
     menuView.separatorColor = MLClolor(51, 51, 51, 0.5);
     [menuView setMenuViewBackgroundColor:[UIColor whiteColor]];
-    menuView.titleColor = [UIColor blackColor];
+    menuView.titleColor = MLClolor(51, 51, 51, 1);
+    menuView.font = [UIFont systemFontOfSize:15];
     [menuView setCoverViewBackgroundColor:MLClolor(51, 51, 51, 0.5)];
     menuView.didSelectBlock = ^(NSInteger index) {
         NSLog(@"%zd",index);
@@ -76,11 +83,13 @@
     NSArray *titles = @[@"发起群聊",@"添加朋友",@"扫一扫",@"收付款"];
     NSArray *images = @[@"scan",@"scan",@"scan",@"scan"];
 
-    MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4) WithTitles:titles WithImageNames:images WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight WithTriangleOffsetLeft:80 triangleColor:nil];
+    MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4) WithTitles:titles WithImageNames:images WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight WithTriangleOffsetLeft:100 triangleColor:nil];
+    
     menuView.separatorOffSet = 10;
     menuView.separatorColor = MLClolor(51, 51, 51, 0.5);
-    [menuView setMenuViewBackgroundColor:[UIColor grayColor]];
-    menuView.titleColor = [UIColor blackColor];
+    [menuView setMenuViewBackgroundColor:MLClolor(73, 72, 75, 1)];
+    menuView.titleColor = [UIColor whiteColor];
+    menuView.contentLeftOffset = 5;
     menuView.didSelectBlock = ^(NSInteger index) {
         NSLog(@"%zd",index);
     };
@@ -92,7 +101,11 @@
 {
     NSArray *titles = @[@"发起群聊",@"添加朋友",@"扫一扫",@"收付款"];
     NSArray *images = @[@"scan",@"scan",@"scan",@"scan"];
-    MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4) WithTitles:titles WithImageNames:images WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight WithTriangleOffsetLeft:80 triangleColor:nil];
+    MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4) WithTitles:titles WithImageNames:images WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight WithTriangleOffsetLeft:100 triangleColor:nil];
+    menuView.separatorColor = MLClolor(51, 51, 51, 0.5);
+    [menuView setMenuViewBackgroundColor:MLClolor(73, 72, 75, 1)];
+     menuView.titleColor = [UIColor whiteColor];
+     menuView.contentLeftOffset = 5;
     menuView.didSelectBlock = ^(NSInteger index) {
         NSLog(@"%zd",index);
     };
@@ -105,7 +118,11 @@
     NSArray *images = @[@"scan",@"scan",@"scan",@"scan"];
     
         MLMenuView *menuView = [[MLMenuView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100 - 10, 0, 100, 44 * 4)  WithTitles:titles WithImageNames:images WithMenuViewOffsetTop:k_StatusBarAndNavigationBarHeight];
+    menuView.separatorColor = MLClolor(51, 51, 51, 0.5);
+    [menuView setMenuViewBackgroundColor:MLClolor(73, 72, 75, 1)];
     [menuView setCoverViewBackgroundColor:[UIColor lightGrayColor]];
+     menuView.contentLeftOffset = 5;
+     menuView.titleColor = [UIColor whiteColor];
     menuView.didSelectBlock = ^(NSInteger index) {
         NSLog(@"%zd",index);
     };

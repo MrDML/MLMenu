@@ -44,18 +44,20 @@
 }
 
 - (void)loadItemView:(MLMenuData *)menuData{
-    if (self.titles.count <= 0) return;
+    if (menuData.titles.count <= 0) return;
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
     }
-    for (int i = 0; i < self.titles.count; i ++) {
+    self.titles = menuData.titles;
+    self.imageNames = menuData.imageNames;
+    for (int i = 0; i < menuData.titles.count; i ++) {
         
         MLMenuItemView *itemView = [[MLMenuItemView alloc] initWithTitle:self.titles[i] ImageName:self.imageNames[i] WithAtIndex:i withMenuData:menuData];
 
         itemView.delegate = self;
         
         [self addSubview:itemView];
-        if (i == self.titles.count - 1) {
+        if (i == menuData.titles.count - 1) {
             itemView.isHiddenLin = YES;
         }
         
@@ -141,6 +143,7 @@
     button.titleLabel.font = self.menuData.font;
     [button setTitle:self.title forState:UIControlStateNormal];
     button.tag = index;
+    button.menuData = self.menuData;
     [button addTarget:self action:@selector(itemAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:button];
     button.backgroundColor = [UIColor clearColor];
@@ -175,7 +178,8 @@
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-    _button.frame = CGRectMake(0, 0, self.bounds.size.width,self.bounds.size.height - 2);
+    _button.center = CGPointMake(self.bounds.size.width * 0.5 , (self.bounds.size.height - 2) * 0.5);
+    _button.bounds = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height - 2);
     _viewLine.frame = CGRectMake(self.menuData.separatorOffSet, CGRectGetMaxY(_button.frame), self.bounds.size.width - (self.menuData.separatorOffSet * 2), 2);
 }
 
@@ -229,8 +233,15 @@
     [super layoutSubviews];
     
     if (self.imageView.image != nil) {
-        self.imageView.center = CGPointMake(10 + self.imageView.image.size.width * 0.5, self.bounds.size.height * 0.5);
+        
+        CGFloat leftOffset = 10;
+        CGFloat x =  (self.frame.size.width - (self.imageView.image.size.width + 5 + self.titleLabel.frame.size.width)) * 0.5;
+        leftOffset = MIN(leftOffset, x);
+        
+        self.imageView.center = CGPointMake(leftOffset + self.menuData.contentLeftOffset +self.imageView.image.size.width * 0.5, self.bounds.size.height * 0.5);
         self.imageView.bounds = CGRectMake(0, 0, self.imageView.image.size.width, self.imageView.image.size.height);
+        
+       
         
         CGRect frame = self.titleLabel.frame;
         frame.origin.x = CGRectGetMaxX(self.imageView.frame) + 5;

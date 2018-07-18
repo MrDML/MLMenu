@@ -17,6 +17,7 @@
     self.contentColor = [UIColor whiteColor];
     self.separatorAlpha = 1;
     self.separatorOffSet = 10;
+    
 }
 
 
